@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Blended Backgrounds</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for Background Blending and Shiny Text */
+        body {
+            background: none;
+        }
+
+        .bg-blended {
+            background-image: url('images/moottoritie.jpeg'), url('images/c6ybDHbFMfgyL64EW4Qd--0--0es5l.jpg.webp');
+            background-size: cover, cover;
+            background-position: center, center;
+            background-blend-mode: overlay; /* Blends the two images */
+            background-repeat: no-repeat, no-repeat;
+        }
+
+        .shiny-text {
+            position: relative;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Ensure primary and secondary colors are defined */
+        :root {
+            --primary: #1d4ed8; /* Example primary color */
+            --secondary: #3b82f6; /* Example secondary color */
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Background Container with Blended Images -->
+    <div class="fixed inset-0 -z-10 bg-blended">
+        <div class="absolute inset-0 bg-black/20 backdrop-blur-sm"></div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="relative py-20 overflow-hidden">
+        <div class="relative bg-white/80 backdrop-blur-sm rounded-xl mx-4 sm:mx-8 lg:mx-16">
+            <div class="container mx-auto px-2 sm:px-4 lg:px-6 py-12">
+                <div class="flex flex-col items-center">
+                    <!-- Title + Subtext with Animated Line -->
+                    <div class="text-center mb-12">
+                        <div class="relative group">
+                            <span class="inline-block px-4 py-1 text-2xl font-semibold shiny-text text-primary bg-primary/10 rounded-full mb-2">
+                                VIRALLINEN JÄLLEENMYYJÄ
+                            </span>
+                            <div class="h-1 bg-primary mx-auto w-16 group-hover:w-24 transition-all duration-500 mb-2 rounded-full"></div>
+                            <p class="text-gray-600 text-base font-medium">
+                                Valtuutettu huoltokumppani
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Partner Logos with Modern Hover Effect -->
+                    <div class="flex flex-wrap justify-center gap-8 mb-12">
+                        <!-- AODES Logo -->
+                        <div class="relative group">
+                            <a href="https://www.aodes.fi/" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                                <img src="images/aodes-logo.png" alt="AODES logo" class="h-24 object-contain">
+                                <div class="absolute left-1/2 -translate-x-1/2 mt-3 flex items-center gap-2 w-max px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
+                                    <span>Vieraile AODES verkkosivuilla</span>
+                                    <i class="fas fa-external-link-alt text-xs"></i>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Trapper Logo -->
+                        <div class="relative group">
+                            <a href="https://www.trapper.fi/" class="block p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                                <img src="images/trapper.png" alt="Trapper logo" class="h-24 object-contain">
+                                <div class="absolute left-1/2 -translate-x-1/2 mt-3 flex items-center gap-2 w-max px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
+                                    <span>Vieraile Trapper verkkosivuilla</span>
+                                    <i class="fas fa-external-link-alt text-xs"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Main Text Content -->
+                    <div class="max-w-5xl mx-auto bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100 mb-12">
+                        <div class="p-8 md:p-12 text-center">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                                Ammattitaitoista huoltoa <span class="text-primary">luotettavasti</span> ja <span class="text-primary">nopeasti</span>
+                            </h2>
+                            <div class="max-w-3xl mx-auto">
+                                <p class="text-lg text-gray-600 leading-relaxed mb-6">
+                                    Meille tärkeintä on varmistaa, että laitteesi toimivat täydellisesti silloin, kun niitä eniten tarvitset.
+                                    Asiantunteva huolto ja alkuperäiset varaosat pitävät koneesi käyttökunnossa vuosikausia.
+                                </p>
+                                <a href="palvelut.html" class="inline-flex items-center text-primary font-medium hover:underline">
+                                    <span>Lue lisää palveluistamme</span>
+                                    <i class="fas fa-arrow-right ml-2"></i>
+                                </a>
+                            </div>
+
+                            <!-- Stats Grid -->
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white">
+                                    <div class="text-4xl font-bold text-primary mb-2">24h</div>
+                                    <p class="text-gray-600">Pikahuolto</p>
+                                </div>
+                                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white">
+                                    <div class="text-4xl font-bold text-primary mb-2">100%</div>
+                                    <p class="text-gray-600">Alkuperäiset varaosat</p>
+                                </div>
+                                <div class="text-center p-6 rounded-xl bg-gradient-to-br from-gray-50 to-white">
+                                    <div class="text-4xl font-bold text-primary mb-2">20v+</div>
+                                    <p class="text-gray-600">Kokemus</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                        <!-- Feature 1 -->
+                        <div class="group relative overflow-hidden bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative p-8">
+                                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6">
+                                    <i class="fas fa-bolt text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Pikahuolto</h3>
+                                <p class="text-gray-600">Korjaukset mahdollisimman nopeasti, usein samalle päivälle</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 2 -->
+                        <div class="group relative overflow-hidden bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative p-8">
+                                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6">
+                                    <i class="fas fa-chart-line text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Ilmaiset arviot</h3>
+                                <p class="text-gray-600">Korjaus- ja huoltoarviot ilman sitoumuksia</p>
+                            </div>
+                        </div>
+
+                        <!-- Feature 3 -->
+                        <div class="group relative overflow-hidden bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100">
+                            <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            <div class="relative p-8">
+                                <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-primary/10 text-primary mb-6">
+                                    <i class="fas fa-shield-alt text-xl"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800 mb-3">Laaja takuu</h3>
+                                <p class="text-gray-600">Takuu sekä työlle että käytetyille osille</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-20 overflow-hidden">
+        <div class="relative bg-white/80 backdrop-blur-sm rounded-xl mx-4 sm:mx-8 lg:mx-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Yhteystiedot</h2>
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Form -->
+                    <div class="lg:w-1/2">
+                        <form action="https://formspree.io/f/moqgrzvz" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Nimi</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Sähköposti</label>
+                                <input type="email" id="email" name="_replyto" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-gray-700 font-medium mb-2">Puhelinnumero</label>
+                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                            </div>
+                            <div>
+                                <label for="service" class="block text-gray-700 font-medium mb-2">Tarvitsemani palvelu</label>
+                                <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
+                                    <option value="">Valitse palvelu</option>
+                                    <option value="moottorikelkka">Moottorikelkkakorjaus</option>
+                                    <option value="ruohonleikkuri">Ruohonleikkurien huolto</option>
+                                    <option value="moottorisaha">Moottorisahakorjaus</option>
+                                    <option value="mönkijä">Mönkijöiden korjaus</option>
+                                    <option value="moottoripyörä">Moottoripyörien huolto</option>
+                                    <option value="muu">Muu laite</option>
+                                    <option value="vaihtolaitteet">Vaihtolaitteet</option>
+                                    <option value="varaosa">Varaosat</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Viesti</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary hover:bg-secondary text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">Lähetä viesti</button>
+                        </form>
+                    </div>
+
+                    <!-- Info Box -->
+                    <div class="lg:w-1/2">
+                        <div class="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-md h-full border border-gray-200">
+                            <h3 class="text-2xl font-bold text-gray-800 mb-6">Tervetuloa korjaamoomme</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <i class="fas fa-map-marker-alt text-primary text-xl mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Osoite</h4>
+                                        <p class="text-gray-600">Torpinkatu 7<br>95420 Tornio</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-clock text-primary text-xl mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Aukioloajat</h4>
+                                        <p class="text-gray-600">Maanantai - Perjantai: 8:00 - 17:00<br>Lauantai: Suljettu<br>Sunnuntai: Suljettu</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start">
+                                    <i class="fas fa-phone-alt text-primary text-xl mt-1 mr-4"></i>
+                                    <div>
+                                        <h4 class="font-bold text-gray-800">Yhteydenotot</h4>
+                                        <p class="text-gray-600">
+                                            Puhelin: <a href="tel:+0401637059" class="hover:text-primary transition">+358 40 163 7059</a><br>
+                                            Sähköposti: <a href="mailto:pkhalamaki@gmail.com" class="hover:text-primary transition">pkhalamakioy@gmail.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-8">
+                                <h4 class="font-bold text-gray-800 mb-4">Seuraa meitä</h4>
+                                <div class="flex space-x-4">
+                                    <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
