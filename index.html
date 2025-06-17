@@ -317,7 +317,7 @@
                 <!-- Service Card 6 - Muut huollot -->
                 <a href="muuthuollot.html" class="block bg-gray-50 rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 hover:shadow-lg transition duration-300 h-full">
                     <div class="flex flex-col h-full">
-                        <img src="images/image-7.jpg" alt="Kausihuolto työpöydällä" class="w-full h-48 object-cover" loading="lazy">
+                        <img src="images/muuhuolto.jpg" alt="Kausihuolto työpöydällä" class="w-full h-48 object-cover" loading="lazy">
                         <div class="p-6 flex flex-col justify-between flex-grow">
                             <div>
                                 <div class="flex items-center mb-4">
@@ -651,52 +651,120 @@
 
                 <!-- Info Box -->
                 <div class="lg:w-1/2">
-                    <div class="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-md h-full border border-gray-200">
-                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Tervetuloa korjaamoomme</h3>
-                        <div class="space-y-6">
-                            <!-- Address -->
-                            <div class="flex items-start">
-                                <i class="fas fa-map-marker-alt text-primary text-xl mt-1 mr-4"></i>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Osoite</h4>
-                                    <p class="text-gray-600">Torpinkatu 7<br>95420 Tornio</p>
-                                </div>
-                            </div>
-                            <!-- Hours -->
-                            <div class="flex items-start">
-                                <i class="fas fa-clock text-primary text-xl mt-1 mr-4"></i>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Aukioloajat</h4>
-                                    <p class="text-gray-600">Maanantai - Perjantai: 8:00 - 17:00<br>Lauantai: Suljettu<br>Sunnuntai: Suljettu</p>
-                                </div>
-                            </div>
-                            <!-- Contact -->
-                            <div class="flex items-start">
-                                <i class="fas fa-phone-alt text-primary text-xl mt-1 mr-4"></i>
-                                <div>
-                                    <h4 class="font-bold text-gray-800">Yhteydenotot</h4>
-                                    <p class="text-gray-600">
-                                        Puhelin: <a href="tel:+0401637059" class="hover:text-primary transition">+358 40 163 7059</a><br>
-                                        Sähköposti: <a href="mailto:pkhalamaki@gmail.com" class="hover:text-primary transition">pkhalamakioy@gmail.com</a>
-                                    </p>
-                                </div>
-                            </div>
+                <div class="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-md h-full border border-gray-200">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                    <!-- Korjaamo osio -->
+                    <div class="space-y-6">
+
+                        <!-- Pieni hover-boksi otsikolle + tekstille -->
+                        <div class="inline-block p-4 bg-white rounded-md shadow-sm border border-gray-300
+                                    transform transition-transform duration-300 hover:rotate-2 hover:scale-105 cursor-pointer">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-1">Korjaamo</h4>
+                        <p class="text-gray-500">Uudet mönkijät</p>
                         </div>
 
-                        <!-- Social -->
-                        <div class="mt-8">
-                            <h4 class="font-bold text-gray-800 mb-4">Seuraa meitä</h4>
-                            <div class="flex space-x-4">
-                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
-                                    <i class="fab fa-facebook-f"></i>
-                                </a>
-                                <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
+                        <!-- Osoite ym. muu sisältö ilman hover-efektiä -->
+                        <div class="flex items-start mt-4">
+                        <i class="fas fa-map-marker-alt text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Osoite</h5>
+                            <p class="text-gray-600">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Torpinkatu+7,+95420+Tornio" target="_blank" class="hover:text-primary transition">
+                                Torpinkatu 7<br>95420 Tornio
+                            </a>
+                            </p>
                         </div>
+                        </div>
+
+                        <div class="flex items-start">
+                        <i class="fas fa-clock text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Aukioloajat</h5>
+                            <p class="text-gray-600">Maanantai - Perjantai: 8:00 - 17:00<br>Lauantai: Suljettu<br>Sunnuntai: Suljettu</p>
+                        </div>
+                        </div>
+
+                        <div class="flex items-start">
+                        <i class="fas fa-phone-alt text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Yhteydenotot</h5>
+                            <p class="text-gray-600">
+                            <a href="tel:+358401637059" class="hover:text-primary transition">+358 40 163 7059</a> · 
+                            <a href="mailto:pkhalamakioy@gmail.com" class="hover:text-primary transition">pkhalamakioy@gmail.com</a>
+                            </p>
+                        </div>
+                        </div>
+
                     </div>
+
+                    <!-- Myymälä osio -->
+                    <div class="space-y-6">
+
+                        <!-- Pieni hover-boksi otsikolle + tekstille -->
+                        <div class="inline-block p-4 bg-white rounded-md shadow-sm border border-gray-300
+                                    transform transition-transform duration-300 hover:rotate-2 hover:scale-105 cursor-pointer">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-1">Myymälä</h4>
+                        <p class="text-gray-500">Sähköpyörät, varaosat</p>
+                        </div>
+
+                        <!-- Osoite ym. muu sisältö -->
+                        <div class="flex items-start mt-4">
+                        <i class="fas fa-map-marker-alt text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Osoite</h5>
+                            <p class="text-gray-600">
+                            <a href="https://www.google.com/maps/search/?api=1&query=Tellervontie+7,+95410+Tornio" target="_blank" class="hover:text-primary transition">
+                                Tellervontie 7<br>95410 Tornio
+                            </a>
+                            </p>
+                        </div>
+                        </div>
+
+                        <div class="flex items-start">
+                        <i class="fas fa-clock text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Aukioloajat</h5>
+                            <p class="text-gray-600">Maanantai - Perjantai: 8:00 - 17:00<br>Lauantai: Suljettu<br>Sunnuntai: Suljettu</p>
+                        </div>
+                        </div>
+
+                        <div class="flex items-start">
+                        <i class="fas fa-phone-alt text-primary text-xl mt-1 mr-4"></i>
+                        <div>
+                            <h5 class="font-bold text-gray-800">Yhteydenotot</h5>
+                            <p class="text-gray-600">
+                            <a href="tel:+358401806063" class="hover:text-primary transition">+358 40 180 6063</a> · 
+                            <a href="mailto:pkhalamakioy@gmail.com" class="hover:text-primary transition">pkhalamakioy@gmail.com</a>
+                            </p>
+                        </div>
+                        </div>
+
+                    </div>
+
+                    </div>
+
+                    <!-- Social -->
+                    <div class="mt-8">
+                    <h4 class="font-bold text-gray-800 mb-4">Seuraa meitä</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                        <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="bg-gray-200 hover:bg-primary hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition">
+                        <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    </div>
+
                 </div>
+                </div>
+
+
+
+
+
             </div>
         </div>
     </div>    
