@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PKH Alamäki Oy | Pienkonehuolto Torniossa</title>
-    <meta name="description" content="Ammattitaitoinen pienkonehuolto ja korjauspalvelut Torniossa. Huollamme ruohonleikkurit, moottorikelkat, mopot, mönkijät, skootterit ja moottorisahat.">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>PKH Alamäki Oy | Pienkonehuolto Tornio</title>
+    <meta name="description" content="PKH Alamäki Oy tarjoaa pienkonehuoltoa Torniossa: ruohonleikkurit, moottorikelkat, mönkijät ja moottorisahat. Ota yhteyttä!">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <script>
         tailwind.config = {
@@ -22,6 +22,39 @@
             }
         }
     </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Pienkonehuolto",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "PKH Alamäki Oy",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Torpinkatu 7",
+      "addressLocality": "Tornio",
+      "postalCode": "95420",
+      "addressCountry": "FI"
+    }
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Tornio"
+  },
+  "description": "Huollamme ruohonleikkurit, moottorikelkat, mönkijät, skootterit ja moottorisahat."
+}
+</script>   
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-XXXXX-X');
+</script>
+
 <style>
   /* Hero Section */
   .hero-bg {
@@ -118,7 +151,7 @@
             <div class="flex justify-between items-center">
                 <div class="flex items-center space-x-3">
                     <!-- Logo-kuva -->
-                    <img src="images/IMG_0225.png" alt="Logo" class="h-10 w-auto" />
+                    <img src="images/IMG_0225.png" alt="PKH Alamäki Oy logo" class="h-10 w-auto" />
 
                     <!-- Otsikko -->
                     <h1 class="text-2xl font-bold text-gray-800">
@@ -134,8 +167,8 @@
                     </ul>
                 </nav>
 
-                <button class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
+                <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
@@ -426,7 +459,7 @@
           <!-- AODES Logo -->
           <div class="relative group">
             <a href="https://www.aodes.fi/" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
-              <img src="images/aodes.jpg" alt="AODES logo" class="h-24 object-contain">
+              <img src="images/aodes.jpg" alt="AODES jälleenmyyjän logo" class="h-24 object-contain">
               <div class="absolute left-1/2 -translate-x-1/2 mt-3 flex items-center gap-2 w-max px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
                 <span>Vieraile AODES verkkosivuilla</span>
                 <i class="fas fa-external-link-alt text-xs"></i>
@@ -741,9 +774,9 @@
     </footer>
 
     <script>
-        // Mobile menu toggle functionality
-        document.querySelector('button.md\\:hidden').addEventListener('click', function() {
+        document.querySelector('#mobile-menu-toggle').addEventListener('click', function() {
         const nav = document.querySelector('nav');
+        const isExpanded = nav.classList.contains('block');
         nav.classList.toggle('hidden');
         nav.classList.toggle('block');
         nav.classList.toggle('absolute');
@@ -753,6 +786,7 @@
         nav.classList.toggle('bg-white');
         nav.classList.toggle('shadow-md');
         nav.classList.toggle('p-4');
+        this.setAttribute('aria-expanded', !isExpanded);
         });
 
         // Smooth scrolling for anchor links
