@@ -61,11 +61,34 @@
       table {
         display: block;
         overflow-x: auto;
-        white-space: nowrap;
+        white-space: normal;
       }
       th, td {
-        font-size: 0.875rem;
+        font-size: 0.75rem;
         padding: 0.5rem;
+      }
+      .service-description {
+        display: none;
+      }
+      .service-description.open {
+        display: block;
+      }
+      .service-row {
+        cursor: pointer;
+      }
+      .dropdown-icon {
+        transition: transform 0.3s ease;
+      }
+      .dropdown-icon.open {
+        transform: rotate(180deg);
+      }
+    }
+    @media (min-width: 769px) {
+      .dropdown-icon {
+        display: none;
+      }
+      .service-description {
+        display: table-cell !important;
       }
     }
   </style>
@@ -134,30 +157,42 @@
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">Peruskausihuolto</td>
-              <td class="px-4 md:px-8 py-4 text-sm text-gray-600">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
+            <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
+                Peruskausihuolto
+                <i class="fas fa-chevron-down dropdown-icon ml-2"></i>
+              </td>
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
               <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">320€</span>
               </td>
             </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">UTV Peruskausihuolto</td>
-              <td class="px-4 md:px-8 py-4 text-sm text-gray-600">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
+            <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
+                UTV Peruskausihuolto
+                <i class="fas fa-chevron-down dropdown-icon ml-2"></i>
+              </td>
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
               <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">340€</span>
               </td>
             </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">Muut huoltotyöt ja korjaukset</td>
-              <td class="px-4 md:px-8 py-4 text-sm text-gray-600">Muut huoltotyöt ja korjaukset tuntiveloituksen mukaan</td>
+            <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
+                Muut huoltotyöt ja korjaukset
+                <i class="fas fa-chevron-down dropdown-icon ml-2"></i>
+              </td>
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Muut huoltotyöt ja korjaukset tuntiveloituksen mukaan</td>
               <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">69€</span>
               </td>
             </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">Vikakoodit</td>
-              <td class="px-4 md:px-8 py-4 text-sm text-gray-600">Vikakoodien luku / koodaus / diagnostiikka</td>
+            <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
+                Vikakoodit
+                <i class="fas fa-chevron-down dropdown-icon ml-2"></i>
+              </td>
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vikakoodien luku / koodaus / diagnostiikka</td>
               <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">20€</span>
               </td>
@@ -165,7 +200,7 @@
           </tbody>
         </table>
       </div>
-      <div class="text-center mt-8 text-sm text-gray-500">
+      <div class="text-center mt-8 text-sm text-gray-600">
         Hinnat alkaen – sisältää perustyöt, mahdolliset lisätyöt sovitaan asiakkaan kanssa.
       </div>
     </div>
@@ -201,9 +236,7 @@
               <div>
                 <p class="text-gray-600 text-sm">Osoite</p>
                 <p class="font-medium text-gray-900">
-                  <a href="https://www.google.com/maps/place/Torpinkatu+7,+95420+Tornio" target="_blank" class="hover:underline text-blue-700">
-                    Torpinkatu 7, 95420 Tornio
-                  </a>
+                  <a href="https://www.google.com/maps/place/Torpinkatu+7,+95420+Tornio" target="_blank" class="hover:underline text-blue-700">Torpinkatu 7, 95420 Tornio</a>
                 </p>
               </div>
             </div>
@@ -214,17 +247,17 @@
           <div class="space-y-4">
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700">Nimi</label>
-              <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-sm" />
+              <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-xs sm:text-sm" />
             </div>
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Sähköposti</label>
-              <input type="email" id="email" name="_replyto" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-sm" />
+              <input type="email" id="email" name="_replyto" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-xs sm:text-sm" />
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700">Viesti</label>
-              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-sm"></textarea>
+              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-600 p-2 border text-xs sm:text-sm"></textarea>
             </div>
-            <button type="button" onclick="alert('Form submission is disabled in this environment. Please use the contact information to reach out directly.')" class="btn-primary text-white px-6 py-3 rounded-full font-medium w-full text-sm">
+            <button type="button" onclick="alert('Form submission is disabled in this environment. Please use the contact information to reach out directly.')" class="btn-primary text-white px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-medium w-full text-xs sm:text-sm">
               Lähetä viesti
             </button>
           </div>
@@ -245,6 +278,14 @@
     mobileMenuClose.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
     });
+
+    function toggleDropdown(row) {
+      if (window.innerWidth <= 768) {
+        const description = row.querySelector('.service-description');
+        const icon = row.querySelector('.dropdown-icon');
+        description.classList.toggle('open');
+        icon.classList.toggle('open');
+      }
+    }
   </script>
-</body>
 </html>
