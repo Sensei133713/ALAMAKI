@@ -3,26 +3,39 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <title>Mönkijöiden Huolto</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="description" content="Ammattitaitoinen pienkonehuolto ja korjauspalvelut Torniossa. Huollamme ruohonleikkurit, moottorikelkat, mopot, mönkijät, skootterit ja moottorisahat." />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
+  <title>PKH Alamäki Oy | Pienkonehuolto Torniossa</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2563eb",
+            secondary: "#1e40af",
+            accent: "#f59e0b"
+          }
+        }
+      }
+    }
+  </script>
   <style>
     body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        /* KORVAA TÄMÄ POLKU OMAN KUVASI POLULLA */
-        background-image: url('images/monkijatausta.jpeg');
-        background-size: cover;
-        background-position: center;
-        filter: blur(3px);
-        z-index: -1;
-        opacity: 0.3;
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/monkijatausta.jpeg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(3px);
+      z-index: -1;
+      opacity: 0.3;
     }
     .gradient-bg {
       background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
@@ -35,152 +48,140 @@
       transform: translateY(-2px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
+    .mobile-menu {
+      transition: transform 0.3s ease-in-out;
+    }
+    @media (max-width: 768px) {
+      .mobile-menu {
+        transform: translateX(100%);
+      }
+      .mobile-menu.open {
+        transform: translateX(0);
+      }
+      table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      th, td {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+      }
+    }
   </style>
 </head>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PKH Alamäki Oy | Pienkonehuolto Torniossa</title>
-    <meta name="description" content="Ammattitaitoinen pienkonehuolto ja korjauspalvelut Torniossa. Huollamme ruohonleikkurit, moottorikelkat, mopot, mönkijät, skootterit ja moottorisahat.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#2563eb",
-                        secondary: "#1e40af",
-                        accent: "#f59e0b"
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hero-bg {
-            background-image: url('images/wp8892073-car-rims-wallpapers.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(3px);
-        }
-        .hero-content {
-            backdrop-filter: blur(5px);
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-    </style>
-</head>
-
-<body class="font-sans bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <!-- Logo-kuva -->
-                    <img src="images/IMG_0225.png" alt="Logo" class="h-10 w-auto" />
-
-                    <!-- Otsikko -->
-                    <h1 class="text-2xl font-bold text-gray-800">
-                        <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
-                    </h1>
-                </div>
-
-                <nav class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
-                        <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
-                        <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
-                    </ul>
-                </nav>
-
-                <button class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+<body class="font-sans bg-gray-50 gradient-bg min-h-screen">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <img src="images/IMG_0225.png" alt="Logo" class="h-10 w-auto" />
+          <h1 class="text-xl md:text-2xl font-bold text-gray-800">
+            <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
+          </h1>
         </div>
-    </header>
+        <button id="mobile-menu-toggle" class="md:hidden text-gray-700">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+            <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+            <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Mobile Menu -->
+      <nav id="mobile-menu" class="mobile-menu md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50">
+        <div class="flex justify-end p-4">
+          <button id="mobile-menu-close" class="text-gray-700">
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+        </div>
+        <ul class="flex flex-col space-y-4 p-4">
+          <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+          <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+          <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-
-<body class="gradient-bg text-gray-800 min-h-screen">
   <div class="container mx-auto px-4 py-8 md:py-16">
-    <div class="flex justify-between mb-10">
-      <a href="index.html" class="btn-primary text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md">
+    <div class="flex flex-col md:flex-row justify-between mb-10 space-y-4 md:space-y-0">
+      <a href="index.html" class="btn-primary text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md justify-center">
         <i class="fas fa-arrow-left"></i>
         <span>Takaisin etusivulle</span>
       </a>
-      <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md hover:bg-gray-50">
+      <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md hover:bg-gray-50 justify-center">
         <i class="fas fa-envelope"></i>
         <span>Kysy lisätietoja</span>
       </a>
     </div>
 
     <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">Mönkijöiden huoltopalvelut</h1>
-      <p class="text-lg text-center text-gray-600 mb-12">Ammattitaitoista huoltoa mönkijällesi – nopeaa ja luotettavaa palvelua.</p>
+      <h1 class="text-3xl md:text-5xl font-bold text-center mb-6 text-gray-900">Mönkijöiden huoltopalvelut</h1>
+      <p class="text-base md:text-lg text-center text-gray-600 mb-12">Ammattitaitoista huoltoa mönkijällesi – nopeaa ja luotettavaa palvelua.</p>
 
       <div class="bg-white rounded-xl shadow-xl overflow-hidden">
         <table class="min-w-full divide-y divide-gray-200">
           <thead class="bg-gray-50">
             <tr>
-              <th class="px-8 py-5 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Palvelu</th>
-              <th class="px-8 py-5 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Kuvaus</th>
-              <th class="px-8 py-5 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">Hinta (alk.)</th>
+              <th class="px-4 md:px-8 py-3 md:py-5 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Palvelu</th>
+              <th class="px-4 md:px-8 py-3 md:py-5 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Kuvaus</th>
+              <th class="px-4 md:px-8 py-3 md:py-5 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">Hinta (alk.)</th>
             </tr>
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 font-medium text-gray-900">Peruskausihuolto</td>
-              <td class="px-8 py-4 text-sm text-gray-600">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
-              <td class="px-8 py-4 text-right text-sm font-medium">
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">Peruskausihuolto</td>
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
+              <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">320€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 font-medium text-gray-900">UTV Peruskausihuolto</td>
-              <td class="px-8 py-4 text-sm text-gray-600">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
-              <td class="px-8 py-4 text-right text-sm font-medium">
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">UTV Peruskausihuolto</td>
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
+              <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">340€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 font-medium text-gray-900">Muut huoltotyöt ja korjaukset</td>
-              <td class="px-8 py-4 text-sm text-gray-600">Muut huoltotyöt ja korjaukset tuntiveloituksen mukaan</td>
-              <td class="px-8 py-4 text-right text-sm font-medium">
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">Muut huoltotyöt ja korjaukset</td>
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600">Muut huoltotyöt ja korjaukset tuntiveloituksen mukaan</td>
+              <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">69€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 font-medium text-gray-900">Vikakoodit</td>
-              <td class="px-8 py-4 text-sm text-gray-600">Vikakoodien luku / koodaus / diagnostiikka</td>
-              <td class="px-8 py-4 text-right text-sm font-medium">
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">Vikakoodit</td>
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600">Vikakoodien luku / koodaus / diagnostiikka</td>
+              <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">20€</span>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
-
       <div class="text-center mt-8 text-sm text-gray-500">
         Hinnat alkaen – sisältää perustyöt, mahdolliset lisätyöt sovitaan asiakkaan kanssa.
       </div>
     </div>
 
     <!-- Contact Section -->
-    <div id="contact" class="max-w-4xl mx-auto mt-20 bg-white rounded-xl shadow-xl overflow-hidden p-8">
-      <h2 class="text-3xl font-bold text-gray-900 mb-6">Ota yhteyttä</h2>
-      <p class="text-gray-600 mb-8">Haluatko lisätietoja mönkijöiden huolloista? Lähetä viesti tai soita meille!</p>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div id="contact" class="max-w-4xl mx-auto mt-12 md:mt-20 bg-white rounded-xl shadow-xl p-6 md:p-8">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6 text-center">Ota yhteyttä</h2>
+      <p class="text-gray-600 mb-8 text-center text-sm md:text-base">Haluatko lisätietoja mönkijöiden huolloista? Lähetä viesti tai soita meille!</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <div>
-          <h3 class="text-xl font-semibold mb-4 text-gray-800">Yhteystiedot</h3>
+          <h3 class="text-lg md:text-xl font-semibold mb-4 text-gray-800">Yhteystiedot</h3>
           <div class="space-y-4">
             <div class="flex items-start">
               <i class="fas fa-phone-alt text-blue-600 mt-1 mr-3"></i>
               <div>
-                <p class="text-gray-600">Puhelin</p>
+                <p class="text-gray-600 text-sm">Puhelin</p>
                 <p class="font-medium text-gray-900">
                   <a href="tel:+358401637059" class="hover:underline text-blue-700">+358 40 163 7059</a>
                 </p>
@@ -189,16 +190,16 @@
             <div class="flex items-start">
               <i class="fas fa-envelope text-blue-600 mt-1 mr-3"></i>
               <div>
-                <p class="text-gray-600">Sähköposti</p>
+                <p class="text-gray-600 text-sm">Sähköposti</p>
                 <p class="font-medium text-gray-900">
-                  <a href="mailto:pkhalamaki@gmail.com" class="hover:underline text-blue-700">pkhalamakioy@gmail.com</a>
+                  <a href="mailto:pkhalamakioy@gmail.com" class="hover:underline text-blue-700">pkhalamakioy@gmail.com</a>
                 </p>
               </div>
             </div>
             <div class="flex items-start">
               <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
               <div>
-                <p class="text-gray-600">Osoite</p>
+                <p class="text-gray-600 text-sm">Osoite</p>
                 <p class="font-medium text-gray-900">
                   <a href="https://www.google.com/maps/place/Torpinkatu+7,+95420+Tornio" target="_blank" class="hover:underline text-blue-700">
                     Torpinkatu 7, 95420 Tornio
@@ -208,31 +209,42 @@
             </div>
           </div>
         </div>
-
         <div>
-          <h3 class="text-xl font-semibold mb-4 text-gray-800">Lähetä viesti</h3>
-          <form action="https://formspree.io/f/moqgrzvz" method="POST" class="space-y-4">
+          <h3 class="text-lg md:text-xl font-semibold mb-4 text-gray-800">Lähetä viesti</h3>
+          <div class="space-y-4">
             <div>
               <label for="name" class="block text-sm font-medium text-gray-700">Nimi</label>
-              <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border">
+              <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-sm" />
             </div>
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">Sähköposti</label>
-              <input type="email" id="email" name="_replyto" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border">
+              <input type="email" id="email" name="_replyto" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-sm" />
             </div>
             <div>
               <label for="message" class="block text-sm font-medium text-gray-700">Viesti</label>
-              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border"></textarea>
+              <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 p-2 border text-sm"></textarea>
             </div>
-            <button type="submit" class="btn-primary text-white px-6 py-3 rounded-full font-medium w-full">
+            <button type="button" onclick="alert('Form submission is disabled in this environment. Please use the contact information to reach out directly.')" class="btn-primary text-white px-6 py-3 rounded-full font-medium w-full text-sm">
               Lähetä viesti
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
-  
-
   </div>
+
+  <script>
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('open');
+    });
+
+    mobileMenuClose.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+    });
+  </script>
 </body>
 </html>
