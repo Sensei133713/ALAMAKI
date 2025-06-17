@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <title>PKH Alamäki Oy | Pienkonehuolto Torniossa</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -82,6 +82,12 @@
       .dropdown-icon.open {
         transform: rotate(180deg);
       }
+      /* Ensure price column alignment on mobile */
+      .price-cell {
+        text-align: right !important;
+        display: block;
+        width: 100%;
+      }
     }
     @media (min-width: 769px) {
       .dropdown-icon {
@@ -89,6 +95,9 @@
       }
       .service-description {
         display: table-cell !important;
+      }
+      .price-cell {
+        text-align: right !important;
       }
     }
   </style>
@@ -105,7 +114,7 @@
           </h1>
         </div>
         <button id="mobile-menu-toggle" class="md:hidden text-gray-700">
-          <i class="fas fa-bars text-2xl"></i>
+          <i class="fa-solid fa-bars text-2xl"></i>
         </button>
         <nav class="hidden md:block">
           <ul class="flex space-x-8">
@@ -119,7 +128,7 @@
       <nav id="mobile-menu" class="mobile-menu md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50">
         <div class="flex justify-end p-4">
           <button id="mobile-menu-close" class="text-gray-700">
-            <i class="fas fa-times text-2xl"></i>
+            <i class="fa-solid fa-times text-2xl"></i>
           </button>
         </div>
         <ul class="flex flex-col space-y-4 p-4">
@@ -134,11 +143,11 @@
   <div class="container mx-auto px-4 py-8 md:py-16">
     <div class="flex flex-col md:flex-row justify-between mb-10 space-y-4 md:space-y-0">
       <a href="index.html" class="btn-primary text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md justify-center">
-        <i class="fas fa-arrow-left"></i>
+        <i class="fa-solid fa-arrow-left"></i>
         <span>Takaisin etusivulle</span>
       </a>
       <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md hover:bg-gray-50 justify-center">
-        <i class="fas fa-envelope"></i>
+        <i class="fa-solid fa-envelope"></i>
         <span>Kysy lisätietoja</span>
       </a>
     </div>
@@ -160,40 +169,40 @@
             <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
               <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
                 Peruskausihuolto
-                <i class="fas fa-chevron-down dropdown-icon ml-2"></i>
+                <i class="fa-solid fa-chevron-down dropdown-icon ml-2"></i>
               </td>
               <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
-              <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
+              <td class="px-4 md:px-8 py-4 text-sm font-medium price-cell">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">320€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
               <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
                 UTV Peruskausihuolto
-                <i class="fas fa-chevron-down dropdown-icon ml-2"></i>
+                <i class="fa-solid fa-chevron-down dropdown-icon ml-2"></i>
               </td>
               <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
-              <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
+              <td class="px-4 md:px-8 py-4 text-sm font-medium price-cell">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">340€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
               <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
                 Muut huoltotyöt ja korjaukset
-                <i class="fas fa-chevron-down dropdown-icon ml-2"></i>
+                <i class="fa-solid fa-chevron-down dropdown-icon ml-2"></i>
               </td>
               <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Muut huoltotyöt ja korjaukset tuntiveloituksen mukaan</td>
-              <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
+              <td class="px-4 md:px-8 py-4 text-sm font-medium price-cell">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">69€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
               <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
                 Vikakoodit
-                <i class="fas fa-chevron-down dropdown-icon ml-2"></i>
+                <i class="fa-solid fa-chevron-down dropdown-icon ml-2"></i>
               </td>
               <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vikakoodien luku / koodaus / diagnostiikka</td>
-              <td class="px-4 md:px-8 py-4 text-right text-sm font-medium">
+              <td class="px-4 md:px-8 py-4 text-sm font-medium price-cell">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">20€</span>
               </td>
             </tr>
@@ -214,7 +223,7 @@
           <h3 class="text-lg md:text-xl font-semibold mb-4 text-gray-800">Yhteystiedot</h3>
           <div class="space-y-4">
             <div class="flex items-start">
-              <i class="fas fa-phone-alt text-blue-600 mt-1 mr-3"></i>
+              <i class="fa-solid fa-phone-alt text-blue-600 mt-1 mr-3"></i>
               <div>
                 <p class="text-gray-600 text-sm">Puhelin</p>
                 <p class="font-medium text-gray-900">
@@ -223,7 +232,7 @@
               </div>
             </div>
             <div class="flex items-start">
-              <i class="fas fa-envelope text-blue-600 mt-1 mr-3"></i>
+              <i class="fa-solid fa-envelope text-blue-600 mt-1 mr-3"></i>
               <div>
                 <p class="text-gray-600 text-sm">Sähköposti</p>
                 <p class="font-medium text-gray-900">
@@ -232,7 +241,7 @@
               </div>
             </div>
             <div class="flex items-start">
-              <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
+              <i class="fa-solid fa-map-marker-alt text-blue-600 mt-1 mr-3"></i>
               <div>
                 <p class="text-gray-600 text-sm">Osoite</p>
                 <p class="font-medium text-gray-900">
