@@ -158,64 +158,67 @@
     opacity: 1 !important;
   }
 
-  @media (max-width: 640px) {
-    .hero-content {
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-    }
+@media (max-width: 360px) {
     .header-title {
-    font-size: 1.25rem; /* Reduce from text-2xl (1.5rem) to text-xl (1.25rem) or smaller */
-    line-height: 1.2; /* Ensure tight line height to avoid extra vertical space */
-    flex-shrink: 1; /* Allow title to shrink if needed */
+        font-size: 1rem; /* Further reduce to 18px (from 1.25rem) for smaller screens */
+        line-height: 1.2;
+        flex-shrink: 1;
+        white-space: nowrap; /* Prevent text wrapping */
+        overflow: hidden; /* Hide overflow if text is too long */
+        text-overflow: ellipsis; /* Add ellipsis if text is truncated */
     }
     .header-flex {
-    gap: 0.5rem; /* Reduce gap from space-x-3 (12px) to 8px */
-    }
-    .hero-section {
-    margin-top: 80px; /* Add margin to push hero below header */
-    min-height: 24rem; /* Ensure enough vertical space */
-    z-index: 10; /* Ensure hero is above mobile menu */
+        gap: 0.25rem; /* Further reduce gap to 4px for more space */
     }
     .header-logo {
-    max-width: 40px; /* Reduce logo size on mobile */
-    height: auto;
+        max-width: 28px; /* Further reduce logo size to 32px */
+        height: auto;
     }
-  }
+    .hero-section {
+        margin-top: 80px;
+        min-height: 24rem;
+        z-index: 10;
+    }
+    /* Ensure header container doesn’t overflow */
+    .header-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+}
+  
 </style>
 
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <!-- Logo-kuva -->
-                    <img src="images/IMG_0225.png" alt="PKH Alamäki Oy logo" class="h-10 w-auto" />
-
-                    <!-- Otsikko -->
-                    <h1 class="text-2xl font-bold text-gray-800">
-                        <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
-                    </h1>
+        <header class="bg-white shadow-md sticky top-0 z-50">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex justify-between items-center header-container">
+                    <div class="flex items-center space-x-3 header-flex">
+                        <!-- Logo-kuva -->
+                        <img src="images/IMG_0225.png" alt="PKH Alamäki Oy logo" class="h-10 w-auto header-logo" />
+                        <!-- Otsikko -->
+                        <h1 class="text-2xl font-bold text-gray-800 header-title">
+                            <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
+                        </h1>
+                    </div>
+                    <nav class="hidden md:block">
+                        <ul class="flex space-x-8">
+                            <li><a href="#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+                            <li><a href="#about" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+                            <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+                        </ul>
+                    </nav>
+                    <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
                 </div>
-
-                <nav class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li><a href="#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
-                        <li><a href="#about" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
-                        <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
-                    </ul>
-                </nav>
-
-                <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
-                <i class="fas fa-bars text-2xl"></i>
-                </button>
             </div>
-        </div>
-    </header>
+        </header>
 
     <!-- Hero Section with Blurred Background -->
-    <section class="relative h-96 flex items-center justify-center overflow-hidden">
+    <section class="relative h-96 flex items-center justify-center overflow-hidden hero-section">
         <div class="hero-bg absolute inset-0"></div>
         <div class="hero-content relative z-10 text-center p-8 rounded-lg max-w-4xl mx-4">
             <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">PKH Alamäki Oy – luotettava pienkonekorjaamosi Torniossa</h2>
