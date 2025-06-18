@@ -3,29 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <title>Moottorikelkka Huoltopalvelut</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#2563eb",
+            secondary: "#1e40af",
+            accent: "#f59e0b"
+          },
+          maxHeight: {
+            '0': '0',
+            'screen': '100vh',
+            'content': '1000px'
+          },
+          rotate: {
+            '0': '0deg',
+            '180': '180deg'
+          }
+        }
+      }
+    }
+
+    function toggleAccordion(id, iconId) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById(iconId);
+      content.classList.toggle('max-h-0');
+      content.classList.toggle('opacity-0');
+      content.classList.toggle('max-h-content');
+      content.classList.toggle('opacity-100');
+      icon.classList.toggle('rotate-180');
+    }
+  </script>
+
   <style>
     body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        /* KORVAA TÄMÄ POLKU OMAN KUVASI POLULLA */
-        background-image: url('images/moottorikelkkatausta.jpeg');
-        background-size: cover;
-        background-position: center;
-        filter: blur(10px);
-        z-index: -1;
-        opacity: 0.3;
-    }
-    .gradient-bg {
-      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/moottorikelkkatausta.jpeg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(10px);
+      z-index: -1;
+      opacity: 0.3;
     }
     .btn-primary {
       background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
@@ -35,202 +64,199 @@
       transform: translateY(-2px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
-    .price-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-    }
   </style>
 </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PKH Alamäki Oy | Pienkonehuolto Torniossa</title>
-    <meta name="description" content="Ammattitaitoinen pienkonehuolto ja korjauspalvelut Torniossa. Huollamme ruohonleikkurit, moottorikelkat, mopot, mönkijät, skootterit ja moottorisahat.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#2563eb",
-                        secondary: "#1e40af",
-                        accent: "#f59e0b"
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hero-bg {
-            background-image: url('images/wp8892073-car-rims-wallpapers.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(3px);
-        }
-        .hero-content {
-            backdrop-filter: blur(5px);
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-    </style>
-</head>
-<body class="font-sans bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <!-- Logo-kuva -->
-                    <img src="images/IMG_0225.png" alt="Logo" class="h-10 w-auto" />
-
-                    <!-- Otsikko -->
-                    <h1 class="text-2xl font-bold text-gray-800">
-                        <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
-                    </h1>
-                </div>
-
-                <nav class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
-                        <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
-                        <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
-                    </ul>
-                </nav>
-
-                <button class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+<body class="font-sans bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+          <img src="images/IMG_0225.png" alt="Logo" class="h-10 w-auto" />
+          <h1 class="text-2xl font-bold text-gray-800">
+            <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
+          </h1>
         </div>
-    </header>
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+            <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+            <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+          </ul>
+        </nav>
+        <button class="md:hidden text-gray-700">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-
-<body class="gradient-bg text-gray-800 min-h-screen">
   <div class="container mx-auto px-4 py-8 md:py-16">
     <!-- Navigation Buttons -->
-    <div class="flex justify-between mb-10">
+    <div class="flex justify-between mb-10 flex-wrap gap-4">
       <a href="index.html" class="btn-primary text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md">
-        <i class="fas fa-arrow-left"></i>
-        <span>Takaisin etusivulle</span>
+        <i class="fas fa-arrow-left"></i><span>Takaisin etusivulle</span>
       </a>
       <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md hover:bg-gray-50 transition-all">
-        <i class="fas fa-envelope"></i>
-        <span>Kysy lisätietoja</span>
+        <i class="fas fa-envelope"></i><span>Kysy lisätietoja</span>
       </a>
     </div>
 
-    <!-- Main Content -->
-    <div class="max-w-4xl mx-auto">
-      <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">Moottorikelkan huoltopalvelut ja hinnasto</h1>
-      <p class="text-lg text-center text-gray-600 mb-12">Ammattitaitoista huoltoa moottorikelkoillesi - nopeaa ja luotettavaa palvelua</p>
+    <!-- Title -->
+    <div class="text-center mb-12">
+      <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Moottorikelkan huoltopalvelut ja hinnasto</h1>
+      <p class="text-lg text-gray-600 mt-4">Ammattitaitoista huoltoa moottorikelkoillesi - nopeaa ja luotettavaa palvelua</p>
+    </div>
 
-      <!-- Pricing Table -->
-      <div class="bg-white rounded-xl shadow-xl overflow-hidden">
-        <table class="min-w-full divide-y divide-gray-200">
-          <thead class="bg-gray-50">
-            <tr>
-              <th scope="col" class="px-8 py-5 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Palvelu</th>
-              <th scope="col" class="px-8 py-5 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Kuvaus</th>
-              <th scope="col" class="px-8 py-5 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">Hinta (alk.)</th>
-            </tr>
-          </thead>
-          <tbody class="bg-white divide-y divide-gray-200">
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 whitespace-nowrap">
-                <div class="flex items-center">
-                  <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-cogs text-blue-600"></i>
-                  </div>
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">2-tahti Moottorikelkan peruskausihuolto</div>
-                  </div>
+    <!-- DESKTOP: Taulukkonäkymä -->
+    <div class="bg-white rounded-xl shadow-xl overflow-hidden hidden md:block">
+      <table class="min-w-full divide-y divide-gray-200">
+        <thead class="bg-gray-50">
+          <tr>
+            <th class="px-8 py-5 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Palvelu</th>
+            <th class="px-8 py-5 text-left text-xs font-semibold text-gray-700 uppercase tracking-wider">Kuvaus</th>
+            <th class="px-8 py-5 text-right text-xs font-semibold text-gray-700 uppercase tracking-wider">Hinta (alk.)</th>
+          </tr>
+        </thead>
+        <tbody class="bg-white divide-y divide-gray-200">
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-8 py-4">
+              <div class="flex items-center">
+                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-cogs text-blue-600"></i>
                 </div>
-              </td>
-              <td class="px-8 py-4 text-sm text-gray-600">Tulpat (poislukien E-Tec), Pakoaukonsäätimien puhdistus / kalibrointi, Variaattoreiden puhdistus / tarkastus, Ketjukotelo / Vaihdelaatikkoöljyn vaihto ja ketjun kireyden tarkastus / säätö, Telaston linjaus / kiristys, Rasvaus, Kaikkien kuluvien osien tarkastus</td>
-              <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">220 €</span>
-              </td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 whitespace-nowrap">
-                <div class="flex items-center">
-                  <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-snowflake text-blue-600"></i>
-                  </div>
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">4-tahti moottorikelkan peruskausihuolto</div>
-                  </div>
+                <div class="ml-4 text-sm font-medium text-gray-900">2-tahti Moottorikelkan peruskausihuolto</div>
+              </div>
+            </td>
+            <td class="px-8 py-4 text-sm text-gray-600">Tulpat (poislukien E-Tec), Pakoaukonsäätimien puhdistus / kalibrointi, Variaattoreiden puhdistus / tarkastus, Ketjukotelo / Vaihdelaatikkoöljyn vaihto ja ketjun kireyden tarkastus / säätö, Telaston linjaus / kiristys, Rasvaus, Kaikkien kuluvien osien tarkastus</td>
+            <td class="px-8 py-4 text-right text-sm font-medium">
+              <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">220€</span>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-8 py-4">
+              <div class="flex items-center">
+                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-snowflake text-blue-600"></i>
                 </div>
-              </td>
-              <td class="px-8 py-4 text-sm text-gray-600">Moottoriöljyt + suodatin, Pakoaukonsäätimien puhdistus / kalibrointi, Variaattoreiden puhdistus / tarkastus, Ketjukotelo / Vaihdelaatikkoöljyn vaihto ja ketjun kireyden tarkastus / säätö, Telaston linjaus / kiristys, Rasvaus, Kaikkien kuluvien osien tarkastus</td>
-              <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">260 €</span>
-              </td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 whitespace-nowrap">
-                <div class="flex items-center">
-                  <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-expand-alt text-blue-600"></i>
-                  </div>
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">Iskunvaimentimien huolto</div>
-                  </div>
+                <div class="ml-4 text-sm font-medium text-gray-900">4-tahti moottorikelkan peruskausihuolto</div>
+              </div>
+            </td>
+            <td class="px-8 py-4 text-sm text-gray-600">Moottoriöljyt + suodatin, Pakoaukonsäätimien puhdistus / kalibrointi, Variaattoreiden puhdistus / tarkastus, Ketjukotelo / Vaihdelaatikkoöljyn vaihto ja ketjun kireyden tarkastus / säätö, Telaston linjaus / kiristys, Rasvaus, Kaikkien kuluvien osien tarkastus</td>
+            <td class="px-8 py-4 text-right text-sm font-medium">
+              <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">260€</span>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-8 py-4">
+              <div class="flex items-center">
+                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-expand-alt text-blue-600"></i>
                 </div>
-              </td>
-              <td class="px-8 py-4 text-sm text-gray-600">Säätö + Huolto</td>
-              <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">50 €</span>
-              </td>
-            </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 whitespace-nowrap">
-                <div class="flex items-center">
-                  <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-search-dollar text-blue-600"></i>
-                  </div>
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">Diagnostiikka</div>
-                  </div>
+                <div class="ml-4 text-sm font-medium text-gray-900">Iskunvaimentimien huolto</div>
+              </div>
+            </td>
+            <td class="px-8 py-4 text-sm text-gray-600">Säätö + Huolto</td>
+            <td class="px-8 py-4 text-right text-sm font-medium">
+              <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">50€</span>
+            </td>
+          </tr>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-8 py-4">
+              <div class="flex items-center">
+                <div class="h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-search-dollar text-blue-600"></i>
                 </div>
-              </td>
-              <td class="px-8 py-4 text-sm text-gray-600">Vikakoodien luku / nollaus / koodaukset</td>
-              <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">20 €</span>
-              </td>
-            <!--</tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 whitespace-nowrap">
-                <div class="flex items-center">
-                  <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-bolt text-blue-600"></i>
-                  </div>
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">Sähköjärjestelmän tarkastus</div>
-                  </div>
-                </div>
-              </td>
-              <td class="px-8 py-4 text-sm text-gray-600">Akku, valot ja johdotukset</td>
-              <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">55 €</span>
-              </td>
-            </tr> -->
-          </tbody>
-        </table>
+                <div class="ml-4 text-sm font-medium text-gray-900">Diagnostiikka</div>
+              </div>
+            </td>
+            <td class="px-8 py-4 text-sm text-gray-600">Vikakoodien luku / nollaus / koodaukset</td>
+            <td class="px-8 py-4 text-right text-sm font-medium">
+              <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">20€</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="space-y-4 md:hidden mt-6">
+      <!-- Accordion-palvelut (4 kpl) -->
+      <div class="border rounded-xl bg-white shadow">
+        <div onclick="toggleAccordion('m1','icon1')" class="flex justify-between items-center p-4 cursor-pointer">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-cogs text-blue-600"></i>
+            <span class="font-semibold text-sm">2-tahti Moottorikelkan peruskausihuolto</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sm font-semibold text-blue-800">220 €</span>
+            <i id="icon1" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div id="m1" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out px-4 text-gray-600 text-sm">
+          Tulpat (poislukien E-Tec), Pakoaukonsäätimien puhdistus / kalibrointi, Variaattoreiden puhdistus / tarkastus, Ketjukotelo / Vaihdelaatikkoöljyn vaihto ja ketjun kireyden tarkastus / säätö, Telaston linjaus / kiristys, Rasvaus, Kaikkien kuluvien osien tarkastus.
+        </div>
       </div>
 
-      <div class="text-center mt-8 text-sm text-gray-500">
-        Hinnat alkaen, lopullinen hinta määräytyy tarkastuksen perusteella.
+      <div class="border rounded-xl bg-white shadow">
+        <div onclick="toggleAccordion('m2','icon2')" class="flex justify-between items-center p-4 cursor-pointer">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-snowflake text-blue-600"></i>
+            <span class="font-semibold text-sm">4-tahti moottorikelkan peruskausihuolto</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sm font-semibold text-blue-800">260 €</span>
+            <i id="icon2" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div id="m2" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out px-4 text-gray-600 text-sm">
+          Moottoriöljyt + suodatin, Pakoaukonsäätimien puhdistus / kalibrointi, Variaattoreiden puhdistus / tarkastus, Ketjukotelo / Vaihdelaatikkoöljyn vaihto ja ketjun kireyden tarkastus / säätö, Telaston linjaus / kiristys, Rasvaus, Kaikkien kuluvien osien tarkastus.
+        </div>
+      </div>
+
+      <div class="border rounded-xl bg-white shadow">
+        <div onclick="toggleAccordion('m3','icon3')" class="flex justify-between items-center p-4 cursor-pointer">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-expand-alt text-blue-600"></i>
+            <span class="font-semibold text-sm">Iskunvaimentimien huolto</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sm font-semibold text-blue-800">50 €</span>
+            <i id="icon3" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div id="m3" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out px-4 text-gray-600 text-sm">
+          Säätö + Huolto
+        </div>
+      </div>
+
+      <div class="border rounded-xl bg-white shadow">
+        <div onclick="toggleAccordion('m4','icon4')" class="flex justify-between items-center p-4 cursor-pointer">
+          <div class="flex items-center space-x-3">
+            <i class="fas fa-search-dollar text-blue-600"></i>
+            <span class="font-semibold text-sm">Diagnostiikka</span>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-sm font-semibold text-blue-800">20 €</span>
+            <i id="icon4" class="fas fa-chevron-down transition-transform duration-300"></i>
+          </div>
+        </div>
+        <div id="m4" class="overflow-hidden max-h-0 opacity-0 transition-all duration-500 ease-in-out px-4 text-gray-600 text-sm">
+          Vikakoodien luku / nollaus / koodaukset.
+        </div>
       </div>
     </div>
 
-   <!-- Contact Section -->
+    <!-- Hintateksti -->
+    <div class="text-center mt-8 text-sm text-gray-500">
+      Hinnat alkaen, lopullinen hinta määräytyy tarkastuksen perusteella.
+    </div>
+
+    <!-- Yhteydenotto-osio -->
     <div id="contact" class="max-w-4xl mx-auto mt-20 bg-white rounded-xl shadow-xl overflow-hidden p-8">
       <h2 class="text-3xl font-bold text-gray-900 mb-6">Ota yhteyttä</h2>
       <p class="text-gray-600 mb-8">Haluatko lisätietoja mönkijöiden huolloista? Lähetä viesti tai soita meille!</p>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 class="text-xl font-semibold mb-4 text-gray-800">Yhteystiedot</h3>
@@ -289,7 +315,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </body>
 </html>

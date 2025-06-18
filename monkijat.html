@@ -80,9 +80,10 @@
         cursor: pointer;
       }
       .dropdown-icon {
-        display: inline-block !important;
+        display: block !important; /* Ensure icon is visible */
         color: #2563eb;
         transition: transform 0.3s ease;
+        margin-left: auto; /* Push icon to the right */
       }
       .dropdown-icon.open {
         transform: rotate(180deg);
@@ -90,6 +91,7 @@
       .price-cell {
         text-align: right !important;
         padding-right: 1rem !important;
+        display: block; /* Ensure price stays in its own row */
       }
     }
     @media (min-width: 769px) {
