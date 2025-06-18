@@ -7,7 +7,7 @@
   <link rel="icon" type="image/x-icon" href="images/favicon.ico" />
   <title>PKH Alamäki Oy | Pienkonehuolto Torniossa</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -53,6 +53,7 @@
     }
     @media (max-width: 768px) {
       .mobile-menu {
+        width: 80vw;
         transform: translateX(100%);
       }
       .mobile-menu.open {
@@ -69,6 +70,8 @@
       }
       .service-description {
         display: none;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
       }
       .service-description.open {
         display: block;
@@ -77,16 +80,16 @@
         cursor: pointer;
       }
       .dropdown-icon {
+        display: inline-block !important;
+        color: #2563eb;
         transition: transform 0.3s ease;
       }
       .dropdown-icon.open {
         transform: rotate(180deg);
       }
-      /* Ensure price column alignment on mobile */
       .price-cell {
         text-align: right !important;
-        display: block;
-        width: 100%;
+        padding-right: 1rem !important;
       }
     }
     @media (min-width: 769px) {
@@ -167,42 +170,70 @@
           </thead>
           <tbody class="bg-white divide-y divide-gray-200">
             <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
-              <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
-                Peruskausihuolto
-                <i class="fa-solid fa-chevron-down dropdown-icon ml-2"></i>
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">
+                <div class="flex items-center justify-between">
+                  <span>Peruskausihuolto</span>
+                  <i class="fa-solid fa-chevron-down dropdown-icon ml-2 text-blue-600"></i>
+                </div>
+                <div class="service-description mt-2 hidden md:hidden">
+                  Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus
+                </div>
               </td>
-              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
-              <td class="px-4 md:px-8 py-4 text-sm font-medium price-cell">
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description hidden md:table-cell">
+                Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus
+              </td>
+              <td class="px-4 md:px-8 py-4 text-sm font-medium text-right">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">320€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
-              <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
-                UTV Peruskausihuolto
-                <i class="fa-solid fa-chevron-down dropdown-icon ml-2"></i>
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">
+                <div class="flex items-center justify-between">
+                  <span>UTV Peruskausihuolto</span>
+                  <i class="fa-solid fa-chevron-down dropdown-icon ml-2 text-blue-600"></i>
+                </div>
+                <div class="service-description mt-2 hidden md:hidden">
+                  Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus
+                </div>
               </td>
-              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus</td>
-              <td class="px-4 md:px-8 py-4 text-sm font-medium price-cell">
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description hidden md:table-cell">
+                Vetopyörästöjen öljyt, moottoriöljyt, vaihteistoöljy, moottoriöljy+suodatin, ilmansuodatin, rasvaus, variaattorin puhdistus / tarkastus, muiden kuluvien osien tarkastus, vikakoodien luku / huoltovalon kuittaus
+              </td>
+              <td class="px-4 md:px-8 py-4 text-sm font-medium text-right">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">340€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
-              <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
-                Muut huoltotyöt ja korjaukset
-                <i class="fa-solid fa-chevron-down dropdown-icon ml-2"></i>
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">
+                <div class="flex items-center justify-between">
+                  <span>Muut huoltotyöt ja korjaukset</span>
+                  <i class="fa-solid fa-chevron-down dropdown-icon ml-2 text-blue-600"></i>
+                </div>
+                <div class="service-description mt-2 hidden md:hidden">
+                  Muut huoltotyöt ja korjaukset tuntiveloituksen mukaan
+                </div>
               </td>
-              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Muut huoltotyöt ja korjaukset tuntiveloituksen mukaan</td>
-              <td class="px-4 md:px-8 py-4 text-sm font-medium price-cell">
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description hidden md:table-cell">
+                Muut huoltotyöt ja korjaukset tuntiveloituksen mukaan
+              </td>
+              <td class="px-4 md:px-8 py-4 text-sm font-medium text-right">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">69€</span>
               </td>
             </tr>
             <tr class="hover:bg-gray-50 transition-colors service-row" onclick="toggleDropdown(this)">
-              <td class="px-4 md:px-8 py-4 font-medium text-gray-900 flex items-center justify-between">
-                Vikakoodit
-                <i class="fa-solid fa-chevron-down dropdown-icon ml-2"></i>
+              <td class="px-4 md:px-8 py-4 font-medium text-gray-900">
+                <div class="flex items-center justify-between">
+                  <span>Vikakoodit</span>
+                  <i class="fa-solid fa-chevron-down dropdown-icon ml-2 text-blue-600"></i>
+                </div>
+                <div class="service-description mt-2 hidden md:hidden">
+                  Vikakoodien luku / koodaus / diagnostiikka
+                </div>
               </td>
-              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description">Vikakoodien luku / koodaus / diagnostiikka</td>
-              <td class="px-4 md:px-8 py-4 text-sm font-medium price-cell">
+              <td class="px-4 md:px-8 py-4 text-sm text-gray-600 service-description hidden md:table-cell">
+                Vikakoodien luku / koodaus / diagnostiikka
+              </td>
+              <td class="px-4 md:px-8 py-4 text-sm font-medium text-right">
                 <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full font-semibold">20€</span>
               </td>
             </tr>
@@ -276,25 +307,55 @@
   </div>
 
   <script>
+    // Mobile menu toggle
     const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
     const mobileMenuClose = document.getElementById('mobile-menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
 
     mobileMenuToggle.addEventListener('click', () => {
       mobileMenu.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
     });
 
     mobileMenuClose.addEventListener('click', () => {
       mobileMenu.classList.remove('open');
+      document.body.style.overflow = '';
     });
 
+    // Service dropdown functionality
     function toggleDropdown(row) {
       if (window.innerWidth <= 768) {
         const description = row.querySelector('.service-description');
         const icon = row.querySelector('.dropdown-icon');
+        
+        // Close all other open descriptions first
+        document.querySelectorAll('.service-description').forEach(el => {
+          if (el !== description && el.classList.contains('open')) {
+            el.classList.remove('open');
+            const otherIcon = el.closest('.service-row').querySelector('.dropdown-icon');
+            if (otherIcon) otherIcon.classList.remove('open');
+          }
+        });
+        
+        // Toggle current description
         description.classList.toggle('open');
         icon.classList.toggle('open');
       }
     }
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function(event) {
+      if (window.innerWidth <= 768) {
+        if (!event.target.closest('.service-row')) {
+          document.querySelectorAll('.service-description').forEach(el => {
+            el.classList.remove('open');
+          });
+          document.querySelectorAll('.dropdown-icon').forEach(el => {
+            el.classList.remove('open');
+          });
+        }
+      }
+    });
   </script>
+</body>
 </html>
