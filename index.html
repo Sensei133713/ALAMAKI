@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fallback for Font Awesome SVG + JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>.  -->
 
     <script>
         tailwind.config = {
@@ -170,6 +170,15 @@
     }
     .header-flex {
     gap: 0.5rem; /* Reduce gap from space-x-3 (12px) to 8px */
+    }
+    .hero-section {
+    margin-top: 80px; /* Add margin to push hero below header */
+    min-height: 24rem; /* Ensure enough vertical space */
+    z-index: 10; /* Ensure hero is above mobile menu */
+    }
+    .header-logo {
+    max-width: 40px; /* Reduce logo size on mobile */
+    height: auto;
     }
   }
 </style>
@@ -793,7 +802,7 @@
             nav.classList.toggle('hidden');
             nav.classList.toggle('block');
             nav.classList.toggle('absolute');
-            nav.classList.toggle('top-16');
+            nav.classList.toggle('top-20');
             nav.classList.toggle('left-0');
             nav.classList.toggle('right-0');
             nav.classList.toggle('bg-white');
