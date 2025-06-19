@@ -3,29 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <title>Moottorisahan Huoltopalvelut</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body::before {
-        content: "";
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        /* KORVAA TÄMÄ POLKU OMAN KUVASI POLULLA */
-        background-image: url('images/sahatausta.jpeg');
-        background-size: cover;
-        background-position: center;
-        filter: blur(6px);
-        z-index: -1;
-        opacity: 0.3;
-    }
-    .gradient-bg {
-      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url('images/sahatausta.jpeg');
+      background-size: cover;
+      background-position: center;
+      filter: blur(6px);
+      z-index: -1;
+      opacity: 0.3;
     }
     .btn-primary {
       background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
@@ -35,92 +30,56 @@
       transform: translateY(-2px);
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     }
-    .price-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    .accordion-content {
+      transition: max-height 0.3s ease-in-out;
     }
   </style>
 </head>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PKH Alamäki Oy | Pienkonehuolto Torniossa</title>
-    <meta name="description" content="Ammattitaitoinen pienkonehuolto ja korjauspalvelut Torniossa. Huollamme ruohonleikkurit, moottorikelkat, mopot, mönkijät, skootterit ja moottorisahat.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#2563eb",
-                        secondary: "#1e40af",
-                        accent: "#f59e0b"
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hero-bg {
-            background-image: url('images/wp8892073-car-rims-wallpapers.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(3px);
-        }
-        .hero-content {
-            backdrop-filter: blur(5px);
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-    </style>
-</head>
 <body class="font-sans bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-3">
-                    <!-- Logo-kuva -->
-                    <img src="images/IMG_0225.png" alt="Logo" class="h-10 w-auto" />
-
-                    <!-- Otsikko -->
-                    <h1 class="text-2xl font-bold text-gray-800">
-                        <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
-                    </h1>
-                </div>
-
-                <nav class="hidden md:block">
-                    <ul class="flex space-x-8">
-                        <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
-                        <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
-                        <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
-                    </ul>
-                </nav>
-
-                <button class="md:hidden text-gray-700">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="container mx-auto px-4 py-4">
+      <div class="flex items-center justify-between flex-wrap">
+        <div class="flex items-center space-x-3 min-w-0">
+          <img src="images/IMG_0225.png" alt="Logo" class="h-10 w-auto shrink-0" />
+          <h1 class="text-xl sm:text-2xl font-bold whitespace-nowrap overflow-hidden text-ellipsis">
+            <span class="text-orange-500">Pienkonehuolto</span> <span class="text-gray-800">Alamäki Oy</span>
+          </h1>
         </div>
-    </header>
-
-
-<body class="gradient-bg text-gray-800 min-h-screen">
-  <div class="container mx-auto px-4 py-8 md:py-16">
-    <!-- Navigation Buttons -->
-    <div class="flex justify-between mb-10">
-      <a href="index.html" class="btn-primary text-white px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md">
-        <i class="fas fa-arrow-left"></i>
-        <span>Takaisin etusivulle</span>
-      </a>
-      <a href="#contact" class="bg-white text-blue-600 px-6 py-3 rounded-full font-medium flex items-center space-x-2 shadow-md hover:bg-gray-50 transition-all">
-        <i class="fas fa-envelope"></i>
-        <span>Kysy lisätietoja</span>
-      </a>
+        <nav class="hidden md:block">
+          <ul class="flex space-x-8">
+            <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+            <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+            <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+          </ul>
+        </nav>
+        <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
     </div>
+  </header>
 
+  <!-- Mobiilivalikko -->
+  <nav id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
+    <ul class="flex justify-center space-x-6 px-4 py-4">
+      <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+      <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+      <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+    </ul>
+  </nav>
+
+  <!-- Navigation Buttons -->
+  <div class="flex justify-between mb-10 px-4 md:px-0">
+    <a href="index.html" class="btn-primary text-white px-6 py-2 sm:py-3 rounded-full font-medium flex items-center space-x-2 shadow-md">
+      <i class="fas fa-arrow-left"></i>
+      <span class="whitespace-nowrap">Takaisin etusivulle</span>
+    </a>
+    <a href="#contact" class="bg-white text-blue-600 px-6 py-2 sm:py-3 rounded-full font-medium flex items-center space-x-2 shadow-md hover:bg-gray-50 transition-all">
+      <i class="fas fa-envelope"></i>
+      <span class="whitespace-nowrap">Kysy lisätietoja</span>
+    </a>
+  </div>
     <!-- Main Content -->
     <div class="max-w-4xl mx-auto">
       <h1 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-900">Moottorisahan ja pienkoneiden huoltopalvelut ja hinnasto</h1>
@@ -248,6 +207,72 @@
       </div>
     </div>
 
+      <!-- Mobile Accordion Price List -->
+  <div class="md:hidden max-w-4xl mx-auto mb-10 px-4">
+    <div class="space-y-4">
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <button class="w-full px-6 py-4 text-left font-medium text-gray-800 flex justify-between items-center" onclick="toggleAccordion(this)">
+          Moottorisahan perushuolto
+          <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content max-h-0 overflow-hidden px-6 text-sm text-gray-700">
+          <p class="py-3">Moottorisahan puhdistus, kaasuttimen säätö, kärkipyörän rasvaus, sytytystulpan vaihto, polttoainesuodattimen vaihto, ilmansuodattimen peseminen</p>
+          <p class="font-semibold text-blue-800 pb-4">Hinta: 99€</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <button class="w-full px-6 py-4 text-left font-medium text-gray-800 flex justify-between items-center" onclick="toggleAccordion(this)">
+          Moottorisahan laajahuolto
+          <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content max-h-0 overflow-hidden px-6 text-sm text-gray-700">
+          <p class="py-3">Moottorisaha pesu, kampikammion painetarkastus, kaastuttimen venttiilisuuttimen ja kiihdyttimen tarkastus, kärkipyörän ja neulalaakerin rasvaus, kaastuttajan säätö, kaasuttajan kalvojen tarkastus / tarvittaessa uusiminen, sytytystulpan vaihto, polttoainesuodattimen vaihto, polttoaineletkujen sekä yleisen kunnon tarkistaminen, ilmasuodattimen pesu</p>
+          <p class="font-semibold text-blue-800 pb-4">Hinta: 169€</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <button class="w-full px-6 py-4 text-left font-medium text-gray-800 flex justify-between items-center" onclick="toggleAccordion(this)">
+          Raivaussaha perushuolto
+          <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content max-h-0 overflow-hidden px-6 text-sm text-gray-700">
+          <p class="py-3">Raivaussahan puhdistus, kaasuttimen säätö, kulmavaihteen rasvaus, sytytys tulpan sekä polttoaine sudoattimen vaihto</p>
+          <p class="font-semibold text-blue-800 pb-4">Hinta: 99€</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <button class="w-full px-6 py-4 text-left font-medium text-gray-800 flex justify-between items-center" onclick="toggleAccordion(this)">
+          Raivaussahan laajahuolto
+          <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content max-h-0 overflow-hidden px-6 text-sm text-gray-700">
+          <p class="py-3">Raivaussahan pesu, kampikammion painetarkastus, kaastuttimen venttiilisuuttimen ja kiihdyttimen tarkastus, kärkipyörän ja neulalaakerin rasvaus, kaastuttajan säätö, kaasuttajan kalvojen tarkastus / tarvittaessa uusiminen, sytytystulpan vaihto, polttoainesuodattimen vaihto, polttoaineletkujen sekä yleisen kunnon tarkistaminen, ilmasuodattimen pesu</p>
+          <p class="font-semibold text-blue-800 pb-4">Hinta: 159€</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <button class="w-full px-6 py-4 text-left font-medium text-gray-800 flex justify-between items-center" onclick="toggleAccordion(this)">
+          Lumilingon perushuolto
+          <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content max-h-0 overflow-hidden px-6 text-sm text-gray-700">
+          <p class="py-3">Lumilingon pesu, vaijerien ja asian liikkuvien osien rasvaus, yleisen kunnon tarkastus, sytytystulpan sekä mottoriöljyn vaihto, kulmavaihteen rasvaus</p>
+          <p class="font-semibold text-blue-800 pb-4">Hinta: 99€</p>
+        </div>
+      </div>
+      <div class="bg-white rounded-xl shadow overflow-hidden">
+        <button class="w-full px-6 py-4 text-left font-medium text-gray-800 flex justify-between items-center" onclick="toggleAccordion(this)">
+          Muut pienkoneet
+          <i class="fas fa-chevron-down transform transition-transform duration-300"></i>
+        </button>
+        <div class="accordion-content max-h-0 overflow-hidden px-6 text-sm text-gray-700">
+          <p class="py-3">Muiden pienkoneiden huollot veloitetaan tuntiveloituksen mukaan</p>
+          <p class="font-semibold text-blue-800 pb-4">Hinta: kysy tarkemmin</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
    <!-- Contact Section -->
     <div id="contact" class="max-w-4xl mx-auto mt-20 bg-white rounded-xl shadow-xl overflow-hidden p-8">
       <h2 class="text-3xl font-bold text-gray-900 mb-6">Ota yhteyttä</h2>
@@ -312,5 +337,20 @@
       </div>
     </div>
   </div>
+  <script>
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('i');
+      if (content.classList.contains('max-h-0')) {
+        content.classList.remove('max-h-0');
+        content.classList.add('max-h-screen');
+        icon.classList.add('rotate-180');
+      } else {
+        content.classList.add('max-h-0');
+        content.classList.remove('max-h-screen');
+        icon.classList.remove('rotate-180');
+      }
+    }
+  </script>
 </body>
 </html>
