@@ -39,6 +39,31 @@
       transform: translateY(-5px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     }
+
+    .hero-bg {
+        background-image: url('images/wp8892073-car-rims-wallpapers.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: blur(3px);
+    }
+    .hero-content {
+        backdrop-filter: blur(5px);
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    /* Fix for sticky header and dropdown */
+    header {
+      z-index: 1000;
+      position: sticky;
+      top: 0;
+    }
+    #mobile-menu {
+      position: absolute;
+      width: 100%;
+      top: 100%;
+      left: 0;
+      z-index: 999;
+    }
   </style>
 
     <meta charset="UTF-8">
@@ -61,63 +86,42 @@
             }
         }
     </script>
-    <style>
-        .hero-bg {
-            background-image: url('images/wp8892073-car-rims-wallpapers.jpg');
-            background-size: cover;
-            background-position: center;
-            filter: blur(3px);
-        }
-        .hero-content {
-            backdrop-filter: blur(5px);
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-    </style>
 </head>
 <body class="font-sans bg-gray-50">
-    <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between flex-wrap">
-          
-          <!-- Logo + otsikko yhdellä rivillä -->
-          <div class="flex items-center space-x-3 min-w-0">
-            <img src="images/IMG_0225.png" alt="PKH Alamäki Oy logo" class="h-10 w-auto shrink-0" />
-            <h1 class="text-xl sm:text-2xl font-bold text-gray-800 whitespace-nowrap overflow-hidden text-ellipsis">
-              <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
-            </h1>
+      <!-- Header -->
+      <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between flex-wrap">
+            <div class="flex items-center space-x-3 min-w-0">
+              <img src="images/IMG_0225.png" alt="Logo" class="h-10 w-auto shrink-0" />
+              <h1 class="text-xl sm:text-2xl font-bold whitespace-nowrap overflow-hidden text-ellipsis">
+                <a href="index.html" class="hover:no-underline">
+                  <span style="color: #f97316;">Pienkonehuolto</span><span class="text-gray-800"> Alamäki Oy</span>
+                </a>
+              </h1>
+            </div>
+            <nav class="hidden md:block">
+              <ul class="flex space-x-8">
+                <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+                <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+              </ul>
+            </nav>
+            <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
           </div>
-
-          <!-- Navigaatio (vain desktop) -->
-          <nav class="hidden md:block">
-            <ul class="flex space-x-8">
-              <li><a href="#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
-              <li><a href="#about" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
-              <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
-            </ul>
-          </nav>
-
-          <!-- Mobiilivalikon painike -->
-          <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
-            <i class="fas fa-bars text-2xl"></i>
-          </button>
         </div>
-      </div>
-    </header>
-
-      <!-- Mobiilivalikko (valikot vierekkäin) -->
-    <nav id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
-      <ul class="flex justify-center space-x-6 px-4 py-4">
-      <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
-      <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
-      <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
-      </ul>
-    </nav>
-
-
-
-
-
+        
+        <!-- Mobiilivalikko -->
+        <nav id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
+          <ul class="flex flex-row px-4 py-4 space-x-4 justify-center">
+            <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition block py-2">Palvelut</a></li>
+            <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition block py-2">Tietoa meistä</a></li>
+            <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition block py-2">Yhteystiedot</a></li>
+          </ul>
+        </nav>
+      </header>
 
 <body class="gradient-bg text-gray-800 min-h-screen">
   <div class="container mx-auto px-4 py-8 md:py-16">
@@ -132,11 +136,6 @@
         <span class="text-sm md:text-base">Kysy lisätietoja</span>
       </a>
     </div>
-
-
-
-
-
 
     <!-- Main Content -->
     <div class="max-w-4xl mx-auto">
@@ -218,40 +217,39 @@
               <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">159 €</span>
             </td>
           </tr>
-                      </tr>
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 whitespace-nowrap">
-                <div class="flex items-center">
-                  <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-gas-pump text-blue-600"></i>
-                  </div>
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">Lumilingon perushuolto</div>
-                  </div>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-8 py-4 whitespace-nowrap">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-gas-pump text-blue-600"></i>
                 </div>
-              </td>
-              <td class="px-8 py-4 text-sm text-gray-600">Lumilingon pesu, vaijerien ja asian liikkuvien osien rasvaus, yleisen kunnon tarkastus, sytytystulpan sekä mottoriöljyn vaihto, kulmavaihteen rasvaus</td>
-              <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
-                <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">99€</span>
-              </td>
-            </tr>   
+                <div class="ml-4">
+                  <div class="text-sm font-medium text-gray-900">Lumilingon perushuolto</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-8 py-4 text-sm text-gray-600">Lumilingon pesu, vaijerien ja asian liikkuvien osien rasvaus, yleisen kunnon tarkastus, sytytystulpan sekä mottoriöljyn vaihto, kulmavaihteen rasvaus</td>
+            <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
+              <span class="bg-blue-100 text-blue-800 py-1 px-3 rounded-full text-sm font-semibold">99€</span>
+            </td>
+          </tr>   
 
-            <tr class="hover:bg-gray-50 transition-colors">
-              <td class="px-8 py-4 whitespace-nowrap">
-                <div class="flex items-center">
-                  <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-cogs text-blue-600"></i>
-                  </div>
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">Muut pienkoneet</div>
-                  </div>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-8 py-4 whitespace-nowrap">
+              <div class="flex items-center">
+                <div class="flex-shrink-0 h-10 w-10 bg-blue-100 rounded-full flex items-center justify-center">
+                  <i class="fas fa-cogs text-blue-600"></i>
                 </div>
-              </td>
-              <td class="px-8 py-4 text-sm text-gray-600">Muiden pienkoneiden huollot veloitetaan tuntiveloituksen mukaan</td>
-              <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
-                
-              </td>
-            </tr>
+                <div class="ml-4">
+                  <div class="text-sm font-medium text-gray-900">Muut pienkoneet</div>
+                </div>
+              </div>
+            </td>
+            <td class="px-8 py-4 text-sm text-gray-600">Muiden pienkoneiden huollot veloitetaan tuntiveloituksen mukaan</td>
+            <td class="px-8 py-4 whitespace-nowrap text-right text-sm font-medium">
+              
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
@@ -314,7 +312,7 @@
         </div>
       </div>
 
-            <!-- Accordion: Lumilingon perushuolto -->
+      <!-- Accordion: Lumilingon perushuolto -->
       <div class="bg-white rounded-xl shadow-lg overflow-hidden">
         <button class="w-full flex justify-between items-center px-4 py-4 text-left font-semibold text-gray-900" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
           <span>Lumilingon perushuolto</span>
@@ -328,7 +326,7 @@
         </div>
       </div>
 
-                  <!-- Accordion: Lumilingon perushuolto -->
+      <!-- Accordion: Muut pienkoneet -->
       <div class="bg-white rounded-xl shadow-lg overflow-hidden">
         <button class="w-full flex justify-between items-center px-4 py-4 text-left font-semibold text-gray-900" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('i').classList.toggle('rotate-180')">
           <span>Muut pienkoneet</span>
@@ -342,7 +340,6 @@
         </div>
       </div>
     </div>
-
 
       <div class="text-center mt-8 text-sm text-gray-500">
         Hinnat alkaen, lopullinen hinta määräytyy tarkastuksen perusteella.
@@ -412,21 +409,28 @@
         </div>
       </div>
     </div>
-
   </div>
 
   <script>
-  const toggleBtn = document.getElementById('mobile-menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+    document.addEventListener('DOMContentLoaded', function() {
+      const toggleBtn = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
 
-  toggleBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    
-    // Päivitä aria-expanded tilaa saavutettavuuden vuoksi
-    const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', !expanded);
-  });
-</script>
+      toggleBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileMenu.classList.toggle('hidden');
+        const expanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+        toggleBtn.setAttribute('aria-expanded', !expanded);
+      });
 
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!mobileMenu.contains(e.target) && e.target !== toggleBtn) {
+          mobileMenu.classList.add('hidden');
+          toggleBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+  </script>
 </body>
 </html>
