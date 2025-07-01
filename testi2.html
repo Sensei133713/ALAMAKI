@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="canonical" href="https://www.pkhalamaki.fi/moottoripyorat.html" />
-  <title>Moottoripyorät</title>
+  <link rel="canonical" href="https://www.pkhalamaki.fi/palvelut.html" />
+  <title>Pienkonehuolto palvelut</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
@@ -18,7 +18,7 @@
         right: 0;
         bottom: 0;
         /* KORVAA TÄMÄ POLKU OMAN KUVASI POLULLA */
-        background-image: url('images/muuttausta.jpeg');
+        background-image: url('images/sahatausta.jpeg');
         background-size: cover;
         background-position: center;
         filter: blur(10px);
@@ -70,7 +70,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PKH Alamäki Oy | Pienkonehuolto Torniossa</title>
-    <meta name="description" content="Ammattitaitoinen pienkonehuolto ja korjauspalvelut Torniossa. Huollamme ruohonleikkurit, moottorikelkat, mopot, mönkijät, skootterit ja moottorisahat.">
+    <meta name="description" content="Ammattitaitoinen moottorisaha- ja pienkonehuolto Torniossa. Huollamme moottorisahat, raivaussahat, lumilingot ja muut pienkoneet. Edulliset hinnat ja nopea palvelu.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -92,7 +92,7 @@
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      "serviceType": "Special devices and engines",
+      "serviceType": "Chainsaw and small engine repair",
       "provider": {
         "@type": "LocalBusiness",
         "name": "PKH Alamäki Oy",
@@ -106,7 +106,7 @@
         },
         "telephone": "+358401637059",
         "openingHours": "Mo-Fr 08:00-17:00",
-        "priceRange": "20-500€"
+        "priceRange": "€€-€€€"
       },
       "areaServed": {
         "@type": "AdministrativeArea",
@@ -120,8 +120,8 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Muut koneet ja laitteet",
-              "description": "Selvitä huoltojen hinnat ottamalla yhteyttä",
+              "name": "Pienkonehuolto palvelut",
+              "description": "Pienkoneiden ja laitteiden korjaus ja huolto",
               "offeredBy": { "@type": "Organization", "name": "PKH Alamäki Oy" },
               "priceCurrency": "EUR"
             }
@@ -130,20 +130,13 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Muut huollot / korjaukset",
-              "description": "Muiden huoltojen ja korjausten hinta vaihtelee, ota yhteyttä",
+              "name": "moottorin korjaus",
+              "description": "pienkone moottoreiden ja laitteiden moottorien korjaus ja huolto",
               "offeredBy": { "@type": "Organization", "name": "PKH Alamäki Oy" },
               "priceCurrency": "EUR"
             }
           },
 
-          
-
-          
- 
-          
-
-          
         ]
       }
     }
@@ -199,60 +192,71 @@
       </a>
     </div>
 
-  <!-- Sivun sisältö -->
-  <main class="max-w-4xl mx-auto px-6 py-12 bg-white shadow mt-8 rounded-xl">
+    <!-- Palvelut Grid -->
+    <section class="py-16 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Palvelu 1 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="text-primary text-3xl mb-4">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Kausihuollot</h3>
+                <p class="text-gray-600">Kaikki tarvittavat huoltotoimenpiteet ennen ja jälkeen kauden, mm. öljynvaihdot ja suodattimien tarkastus.</p>
+            </div>
 
-    <!-- Otsikko -->
-    <h2 class="text-3xl font-bold text-center mb-6">
-      Monipuolista huoltoa kaikenlaisille koneille ja laitteille
-    </h2>
+            <!-- Palvelu 2 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="text-primary text-3xl mb-4">
+                    <i class="fas fa-wrench"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Moottorikorjaukset</h3>
+                <p class="text-gray-600">Korjaamme pienkoneiden moottorit nopeasti ja ammattitaidolla – mopot, sahat, leikkurit ja paljon muuta.</p>
+            </div>
 
-    <!-- Johdanto -->
-    <p class="text-lg text-center mb-8">
-      Pienkonehuolto Alamäki Oy tarjoaa huoltoa ja korjausta myös sellaisille koneille ja laitteille, jotka eivät kuulu perinteisiin pienkoneisiin. Olipa kyseessä erikoislaite, isompi työväline tai harvinaisempi kone, autamme mielellämme.
-    </p>
+            <!-- Palvelu 3 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="text-primary text-3xl mb-4">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Diagnostiikka</h3>
+                <p class="text-gray-600">Selvitämme nopeasti vian syyn nykyaikaisilla diagnostiikkalaitteilla ja annamme selkeän kustannusarvion.</p>
+            </div>
 
-    <!-- Esimerkit -->
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4">✅ Esimerkkejä huolletuista laitteista</h3>
-      <ul class="list-disc list-inside space-y-1 text-lg">
-        <li>Generaattorit</li>
-        <li>Betonihiertimet</li>
-        <li>Puhaltimet ja imurit</li>
-        <li>Rakennustyökalut (esim. piikkauskoneet, poravasarat)</li>
-        <li>Pienkuormaajat ja minikaivurit</li>
-        <li>Harvinaiset tai erikoisvalmisteiset koneet</li>
-      </ul>
+            <!-- Palvelu 4 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="text-primary text-3xl mb-4">
+                    <i class="fas fa-gear"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Voimansiirto ja jarrut</h3>
+                <p class="text-gray-600">Huollamme ja korjaamme ketjut, hihnat, vaihteistot ja jarrujärjestelmät – turvallinen käyttö alkaa toimivasta tekniikasta.</p>
+            </div>
+
+            <!-- Palvelu 5 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="text-primary text-3xl mb-4">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Sähköstartit ja akut</h3>
+                <p class="text-gray-600">Tarkastamme, vaihdamme ja huollamme pienkoneiden käynnistyslaitteet ja akut.</p>
+            </div>
+
+            <!-- Palvelu 6 -->
+            <div class="bg-white rounded-2xl shadow-md p-8 hover:shadow-lg transition">
+                <div class="text-primary text-3xl mb-4">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Takuu- ja varaosapalvelu</h3>
+                <p class="text-gray-600">Käytämme tarvikeosia kustannustehokkaasti, mutta tarjoamme myös alkuperäisosia tarvittaessa. Kaikille osille ja työlle täysi takuu.</p>
+            </div>
+
+        </div>
     </section>
-
-    <!-- Huollon eteneminen -->
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4">🔍 Huollon eteneminen</h3>
-      <ol class="list-decimal list-inside space-y-2 text-lg">
-        <li><strong>Yhteydenotto –</strong> Kerro meille, mitä laitetta tarvitset huollettavaksi.</li>
-        <li><strong>Arviointi –</strong> Tutkimme laitteen ja arvioimme huollon tarpeet.</li>
-        <li><strong>Hinta-arvio –</strong> Annamme tarjouksen ennen työn aloittamista.</li>
-      </ol>
-    </section>
-
-    <!-- Tärkeää tietää -->
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4">💬 Tärkeää tietää</h3>
-      <p class="text-lg">
-        Koska monet näistä koneista ovat yksilöllisiä, niiden huoltotarpeet ja varaosien saatavuus vaihtelevat. Siksi hinta-arvio voidaan antaa vasta, kun olemme tutustuneet laitteeseen. Voit tuoda laitteen meille tai lähettää kuvia ja tietoja etukäteen yhteydenottolomakkeemme kautta.
-      </p>
-    </section>
-
-
-        </tbody>
-      </table>
-    </div>
-
 
     <!-- Contact Section -->
     <div id="contact" class="max-w-4xl mx-auto mt-20 bg-white rounded-xl shadow-xl overflow-hidden p-8">
       <h2 class="text-3xl font-bold text-gray-900 mb-6">Ota yhteyttä</h2>
-      <p class="text-gray-600 mb-8">Haluatko lisätietoja muiden laitteiden ja koneiden huolloista? Lähetä viesti tai soita meille!</p>
+      <p class="text-gray-600 mb-8">Haluatko lisätietoja pienkoneiden ja laitteiden huolloista? Lähetä viesti tai soita meille!</p>
       
       <div id="form-success" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
         <strong class="font-bold">Viesti on lähetetty!</strong>
