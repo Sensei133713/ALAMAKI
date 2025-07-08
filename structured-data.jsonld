@@ -1,0 +1,193 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "PKH Alamäki Oy",
+  "description": "PKH Alamäki Oy tarjoaa pienkonehuoltoa ja myy uusia mönkijöitä Torniossa. Huollamme mm. ruohonleikkurit, moottorikelkat, moottorisahat, veneet, sähköpyörät ja mönkijät.",
+  "url": "https://www.pkhalamaki.fi",
+  "telephone": "+358401637059",
+  "email": "pkhalamakioy@gmail.com",
+  "image": "https://www.pkhalamaki.fi/images/IMG_0225.png",
+  "logo": "https://www.pkhalamaki.fi/images/logo.png",
+  "priceRange": "€€",
+  "vatID": "FIYOURVATID",  // Replace with actual VAT ID
+  "paymentAccepted": ["Cash", "Credit Card", "Mobile Pay"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Torpinkatu 7",
+    "addressLocality": "Tornio",
+    "postalCode": "95420",
+    "addressCountry": "FI"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 65.8481,
+    "longitude": 24.1468
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00",
+      "description": "Suljettu"
+    }
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "Tornio"
+  },
+  "sameAs": [
+    "https://www.facebook.com/yourpage",
+    "https://www.instagram.com/yourprofile"
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "PKH Alamäki Oy – Myymälä",
+  "description": "PKH Alamäki Oy:n myymälä Torniossa tarjoaa sähköpyöriä, varaosia ja asiantuntevaa asiakaspalvelua.",
+  "url": "https://www.pkhalamaki.fi",
+  "telephone": "+358401806063",
+  "email": "pkhalamakioy@gmail.com",
+  "image": "https://www.pkhalamaki.fi/images/IMG_0225.png",
+  "logo": "https://www.pkhalamaki.fi/images/logo.png",
+  "priceRange": "€€",
+  "paymentAccepted": ["Cash", "Credit Card", "Mobile Pay"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tellervontie 2 A 1",
+    "addressLocality": "Tornio",
+    "postalCode": "95410",
+    "addressCountry": "FI"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 65.8475,
+    "longitude": 24.1500
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00",
+      "description": "Suljettu"
+    }
+  ],
+  "branchOf": {
+    "@type": "LocalBusiness",
+    "name": "PKH Alamäki Oy",
+    "url": "https://www.pkhalamaki.fi"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "Tornio"
+  }
+}
+</script>
+
+<!-- Breadcrumbs (fixed URLs) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Etusivu", "item": "https://www.pkhalamaki.fi/" },
+    { "@type": "ListItem", "position": 2, "name": "Palvelut", "item": "https://www.pkhalamaki.fi/index.html#services" },
+    { "@type": "ListItem", "position": 3, "name": "Moottorikelkat", "item": "https://www.pkhalamaki.fi/moottorikelkka.html" }
+  ]
+}
+</script>
+
+<!-- Repeat for other breadcrumbs (same pattern) -->
+
+<!-- Enhanced ItemList with descriptions -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "PKH Alamäki Oy Palvelut",
+  "description": "Laaja valikoima pienkonehuoltoja ja myyntipalveluita Torniossa.",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Moottorikelkat",
+      "url": "https://www.pkhalamaki.fi/moottorikelkka.html",
+      "description": "Ammattitaitoista moottorikelkkahuoltoa ja korjausta."
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ruohonleikkurit",
+      "url": "https://www.pkhalamaki.fi/ruohonleikkuri.html",
+      "description": "Ruohonleikkureiden huolto ja korjaus."
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Moottorisahat",
+      "url": "https://www.pkhalamaki.fi/moottorisahat.html",
+      "description": "Moottorisahojen huolto ja teroitus."
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Mönkijät",
+      "url": "https://www.pkhalamaki.fi/monkijat.html",
+      "description": "Mönkijöiden myynti ja huolto."
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Moottoripyörät",
+      "url": "https://www.pkhalamaki.fi/moottoripyorat.html",
+      "description": "Moottoripyörien huolto ja varaosat."
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Muut huollot",
+      "url": "https://www.pkhalamaki.fi/muuthuollot.html",
+      "description": "Erilaiset pienkonehuollot."
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "name": "Veneet ja Perämoottorit",
+      "url": "https://www.pkhalamaki.fi/vene.html",
+      "description": "Veneiden ja perämoottorien huolto."
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "name": "Sähköpyörät",
+      "url": "https://www.pkhalamaki.fi/sahkopyora.html",
+      "description": "Sähköpyörien myynti ja huolto."
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "name": "Vesiskootterit",
+      "url": "https://www.pkhalamaki.fi/vesiskootteri.html",
+      "description": "Vesiskootterien huolto ja korjaus."
+    }
+  ]
+}
+</script>
