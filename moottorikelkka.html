@@ -76,34 +76,40 @@
 </head>
 <body class="font-sans bg-gray-50">
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
-      <div class="container mx-auto px-4 py-4">
-        <div class="flex items-center justify-between flex-wrap">
-          
-          <!-- Logo + otsikko yhdellä rivillä -->
-          <div class="flex items-center space-x-3 min-w-0">
-            <img src="images/IMG_0225.png" alt="PKH Alamäki Oy logo" class="h-10 w-auto shrink-0" />
-            <h1 class="text-xl sm:text-2xl font-bold text-gray-800 whitespace-nowrap overflow-hidden text-ellipsis">
-              <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
-            </h1>
+     <!-- Header -->
+      <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+          <div class="flex items-center justify-between flex-wrap">
+            <div class="flex items-center space-x-3 min-w-0">
+              <img src="images/IMG_0225.png" alt="PKH Alamäki Oy logo" class="h-10 w-auto shrink-0" />
+              <h1 class="text-xl sm:text-2xl font-bold whitespace-nowrap overflow-hidden text-ellipsis">
+                <a href="index.html" class="hover:no-underline">
+                  <span style="color: #f97316;">Pienkonehuolto</span><span class="text-gray-800"> Alamäki Oy</span>
+                </a>
+              </h1>
+            </div>
+            <nav class="hidden md:block">
+              <ul class="flex space-x-8">
+                <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+                <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+                <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+              </ul>
+            </nav>
+            <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
+              <i class="fas fa-bars text-2xl"></i>
+            </button>
           </div>
-
-          <!-- Navigaatio (vain desktop) -->
-          <nav class="hidden md:block">
-            <ul class="flex space-x-8">
-              <li><a href="#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
-              <li><a href="#about" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
-              <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
-            </ul>
-          </nav>
-
-          <!-- Mobiilivalikon painike -->
-          <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
-            <i class="fas fa-bars text-2xl"></i>
-          </button>
         </div>
-      </div>
-    </header>
+        
+        <!-- Mobiilivalikko -->
+        <nav id="mobile-menu" class="md:hidden hidden bg-white shadow-md">
+          <ul class="flex flex-row px-4 py-4 space-x-4 justify-center">
+            <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition block py-2">Palvelut</a></li>
+            <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition block py-2">Tietoa meistä</a></li>
+            <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition block py-2">Yhteystiedot</a></li>
+          </ul>
+        </nav>
+      </header>
 
       <!-- Mobiilivalikko (valikot vierekkäin) -->
     <nav id="mobile-menu" class="md:hidden hidden bg-white shadow-md">

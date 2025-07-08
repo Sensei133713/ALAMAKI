@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>PKH Alamäki Oy | Pienkonehuolto Tornio</title>
-    <meta name="description" content="PKH Alamäki Oy tarjoaa pienkonehuoltoa Torniossa: ruohonleikkurit, moottorikelkat, mönkijät ja moottorisahat. Ota yhteyttä!">
+    <meta name="description" content="PKH Alamäki Oy - Ammattitaitoinen pienkonehuolto Torniossa. Huollamme moottorikelkat, ruohonleikkurit, mönkijät, moottorisahat, vesiskootterit, veneet, perämoottorit, sähköpyörät ja muut pienkoneet. Ota yhteyttä!">
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,26 +28,115 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "serviceType": "Pienkonehuolto",
-  "provider": {
+  "@type": "LocalBusiness",
+  "name": "PKH Alamäki Oy",
+  "description": "PKH Alamäki Oy tarjoaa pienkonehuoltoa ja myy uusia mönkijöitä Torniossa. Huollamme mm. ruohonleikkurit, moottorikelkat, moottorisahat, veneet, sähköpyörät ja mönkijät.",
+  "url": "https://www.pkhalamakioy.fi",
+  "telephone": "+358401637059",
+  "email": "pkhalamakioy@gmail.com",
+  "image": "https://www.pkhalamakioy.fi/images/IMG_0225.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Torpinkatu 7",
+    "addressLocality": "Tornio",
+    "postalCode": "95420",
+    "addressCountry": "FI"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 65.8496,
+    "longitude": 24.1486
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "00:00",
+      "description": "Suljettu"
+    }
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "Tornio"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "PKH Alamäki Oy – Myymälä",
+  "description": "PKH Alamäki Oy:n myymälä Torniossa tarjoaa sähköpyöriä, varaosia ja asiantuntevaa asiakaspalvelua.",
+  "url": "https://www.pkhalamakioy.fi",
+  "telephone": "+358401806063",
+  "email": "pkhalamakioy@gmail.com",
+  "image": "https://www.pkhalamakioy.fi/images/IMG_0225.png",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tellervontie 2 A 1",
+    "addressLocality": "Tornio",
+    "postalCode": "95410",
+    "addressCountry": "FI"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 65.8377,
+    "longitude": 24.1529
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "00:00",
+      "closes": "00:00",
+      "description": "Suljettu"
+    }
+  ],
+  "branchOf": {
     "@type": "LocalBusiness",
     "name": "PKH Alamäki Oy",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Torpinkatu 7",
-      "addressLocality": "Tornio",
-      "postalCode": "95420",
-      "addressCountry": "FI"
-    }
+    "url": "https://www.pkhalamakioy.fi"
   },
   "areaServed": {
     "@type": "City",
     "name": "Tornio"
-  },
-  "description": "Huollamme ruohonleikkurit, moottorikelkat, mönkijät, veneet, skootterit, mopot, moottorisahat ja muut pienkoneet."
+  }
 }
-</script>   
+</script>
+
+
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PECBHD0M93"></script>
 <script>
@@ -159,21 +248,18 @@
   }
 
 @media (max-width: 360px) {
-    .header-title {
-        font-size: 1rem; /* Further reduce to 18px (from 1.25rem) for smaller screens */
-        line-height: 1.1;
-        flex-shrink: 1;
-        white-space: nowrap; /* Force single line */
-        overflow: hidden; /* Hide overflow */
-        text-overflow: ellipsis; /* Truncate with ellipsis if needed */
+    #mobile-menu a {
+        padding: 0.5rem 0.75rem; /* Reduce padding for smaller screens */
+        font-size: 0.9rem; /* Slightly smaller font */
+    }
     }
     .header-flex {
-        gap: 0.125rem; /* Further reduce gap to 4px for more space */
+        gap: 0.125rem;
     }
     .header-logo {
-        max-width: 28px; /* Further reduce logo size to 32px */
+        max-width: 28px;
         height: auto;
-        width: 28px; /* Explicit width to override natural size */
+        width: 28px;
     }
     .hero-section {
         
@@ -186,41 +272,94 @@
         display: flex;
         align-items: center;
         width: 100%;
-        padding: 0.5rem; /* Reduce padding to minimize height */
+        padding: 0.5rem;
     }
-    header {
-        min-height: 50px; /* Reduce height on mobile */
-    }
-}
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        #mobile-menu {
+            position: fixed;
+            top: 0; /* Dynamically set by JavaScript */
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            background: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+        }
+
+        #mobile-menu.show {
+        transform: translateY(0);
+        opacity: 1;
+        }
+
+        #mobile-menu ul {
+            flex-direction: row;
+            padding: 1rem;
+            flex-wrap: nowrap; /* Prevent wrapping to multiple lines */
+            overflow-x: auto; /* Allow horizontal scrolling if needed */
+            white-space: nowrap; /* Keep items in a single line */
+        }
+
+        #mobile-menu li {
+            margin: 0;
+        }
+
+        #mobile-menu a {
+            padding: 0.5rem 1rem; /* Consistent padding */
+            text-align: center;
+            font-size: 1rem; /* Consistent font size */
+        }
+
   
 </style>
 
-</head>
-<body class="font-sans bg-gray-50">
+    </head>
+    <body class="font-sans bg-gray-50">
     <!-- Header -->
-        <header class="bg-white shadow-md sticky top-0 z-50">
-            <div class="container mx-auto px-4 py-4">
-                <div class="flex justify-between items-center header-container">
-                    <div class="flex items-center space-x-3 header-flex">
-                        <img src="images/IMG_0225.png" alt="PKH Alamäki Oy logo" class="h-10 w-auto header-logo" />
-                        <h1 class="text-xl sm:text-2xl font-bold text-gray-800 header-title whitespace-nowrap">
+    <header class="bg-white shadow-md sticky top-0 z-[1000]">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between flex-wrap">
+                <!-- Logo + otsikko yhdellä rivillä -->
+                <div class="flex items-center space-x-3 min-w-0">
+                    <img src="images/IMG_0225.png" alt="PKH Alamäki Oy logo" class="h-10 w-auto shrink-0" />
+                    <h1 class="text-xl sm:text-2xl font-bold text-gray-800 whitespace-nowrap overflow-hidden text-ellipsis">
                         <span class="text-orange-500">Pienkonehuolto</span> Alamäki Oy
-                        </h1>
-                    </div>
-                    <nav class="hidden md:block">
-                        <ul class="flex space-x-8">
-                            <li><a href="#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
-                            <li><a href="#about" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
-                            <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
-                        </ul>
-                    </nav>
-                    <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
+                    </h1>
                 </div>
-            </div>
-        </header>
 
+                <!-- Navigaatio (vain desktop) -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-8">
+                        <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition">Palvelut</a></li>
+                        <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition">Tietoa meistä</a></li>
+                        <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition">Yhteystiedot</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Mobiilivalikon painike -->
+                <button class="md:hidden text-gray-700" aria-label="Avaa valikko" aria-expanded="false" id="mobile-menu-toggle">
+                    <i class="fas fa-bars text-2xl" id="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden bg-white shadow-md md:hidden">
+        <ul class="flex flex-row items-center justify-center px-4 py-4 space-x-4">
+            <li><a href="index.html#services" class="text-gray-700 hover:text-primary font-medium transition block py-2 px-4 text-center">Palvelut</a></li>
+            <li><a href="palvelut.html" class="text-gray-700 hover:text-primary font-medium transition block py-2 px-4 text-center">Tietoa meistä</a></li>
+            <li><a href="#contact" class="text-gray-700 hover:text-primary font-medium transition block py-2 px-4 text-center">Yhteystiedot</a></li>
+        </ul>
+    </nav>
 <!-- Hero Section with Blurred Background -->
 <section class="relative min-h-[50vh] md:h-96 flex items-center justify-center overflow-hidden mt-0 hero-section">
     <div class="hero-bg absolute inset-0"></div>
@@ -485,7 +624,7 @@
             <!-- Dim overlay and blur -->
             <div class="dim-overlay"></div>
             <!-- Background image with scroll-triggered fade -->
-            <img src="images/moottoritie.jpeg" alt="Background" class="w-full h-full object-cover" id="backgroundImage">
+            <img src="images/moottoritie.jpeg" alt="PKH Alamäki Oy Korjaamo Torniossa" class="w-full h-full object-cover" id="backgroundImage">
         </div>
 
         <!-- Content Container with Semi-Transparent Background -->
@@ -509,7 +648,7 @@
                     <div class="flex flex-wrap justify-center gap-8 mb-12">
                         <!-- AODES Logo -->
                         <div class="relative group">
-                            <a href="https://www.aodes.fi/" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                            <a href="https://www.aodes.fi/" title="AODES verkkosivut" target="_blank" rel="noopener noreferrer" class="block p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
                                 <img src="images/aodes.jpg" alt="AODES jälleenmyyjän logo" class="h-24 object-contain">
                                 <div class="absolute left-1/2 -translate-x-1/2 mt-3 flex items-center gap-2 w-max px-4 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 shadow-xl">
                                     <span>Vieraile AODES verkkosivuilla</span>
@@ -818,107 +957,56 @@
         </div>
     </footer>
 
-    <script>
+        <script>
         // Mobile menu toggle
-        document.querySelector('#mobile-menu-toggle').addEventListener('click', function() {
-            const nav = document.querySelector('nav');
-            const isExpanded = nav.classList.contains('block');
-            nav.classList.toggle('hidden');
-            nav.classList.toggle('block');
-            nav.classList.toggle('absolute');
-            nav.classList.toggle('top-20');
-            nav.classList.toggle('left-0');
-            nav.classList.toggle('right-0');
-            nav.classList.toggle('bg-white');
-            nav.classList.toggle('shadow-md');
-            nav.classList.toggle('p-4');
-            this.setAttribute('aria-expanded', !isExpanded);
+        const toggleBtn = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const header = document.querySelector('header');
+
+        // Function to set mobile menu position based on header height
+        function setMobileMenuPosition() {
+            const headerHeight = header.getBoundingClientRect().height;
+            mobileMenu.style.top = `${headerHeight}px`;
+        }
+
+        // Set initial position and update on resize
+        setMobileMenuPosition();
+        window.addEventListener('resize', setMobileMenuPosition);
+
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent click from bubbling to document
+            const isOpen = mobileMenu.classList.contains('show');
+            mobileMenu.classList.toggle('show', !isOpen);
+            mobileMenu.classList.toggle('hidden', isOpen);
+            toggleBtn.setAttribute('aria-expanded', !isOpen);
+            menuIcon.classList.toggle('fa-bars', isOpen);
+            menuIcon.classList.toggle('fa-times', !isOpen);
         });
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // JavaScript to handle scroll-triggered fade-in for background images
-        document.addEventListener('DOMContentLoaded', () => {
-            const backgroundImages = [
-                { id: 'backgroundImage', section: 'about' },
-                { id: 'contactBackgroundImage', section: 'contact' }
-            ];
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = document.getElementById(entry.target.querySelector('img').id);
-                        img.classList.add('opacity-100');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '100px' });
-
-            backgroundImages.forEach(({ section }) => {
-                const sectionElement = document.getElementById(section);
-                if (sectionElement) {
-                    observer.observe(sectionElement);
-                }
-            });
-
-            // Debug Font Awesome icon loading
-            const icons = document.querySelectorAll('[class*="fa-"]');
-            if (icons.length === 0) {
-                console.warn('No Font Awesome icons found on the page.');
-            } else {
-                icons.forEach(icon => {
-                    if (!window.getComputedStyle(icon, '::before').content) {
-                        console.error(`Font Awesome icon failed to load: ${icon.className}`);
-                    }
-                });
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target) && mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+                mobileMenu.classList.add('hidden');
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
             }
         });
 
-        // Form submission handling
-        const form = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
-
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault(); // Estä perinteinen lomakkeen lähetys
-            const formData = new FormData(form);
-
-            try {
-                const response = await fetch(form.action, {
-                    method: form.method,
-                    body: formData,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-
-                if (response.ok) {
-                    form.reset();
-                    // Näytä viesti fade-in efektillä
-                    successMessage.classList.remove('hidden');
-                    successMessage.classList.remove('opacity-0', 'pointer-events-none');
-                    // 3 sekunnin kuluttua piilota fade-out -efektillä
-                    setTimeout(() => {
-                        successMessage.classList.add('opacity-0');
-                        setTimeout(() => {
-                            successMessage.classList.add('pointer-events-none');
-                            successMessage.classList.add('hidden');
-                        }, 500);
-                    }, 3000);
-                } else {
-                    alert('Lähetys epäonnistui, yritä uudelleen.');
-                }
-            } catch (error) {
-                alert('Tapahtui virhe, yritä uudelleen.');
-            }
+        // Close menu when clicking a menu link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('show');
+                mobileMenu.classList.add('hidden');
+                toggleBtn.setAttribute('aria-expanded', 'false');
+                menuIcon.classList.add('fa-bars');
+                menuIcon.classList.remove('fa-times');
+            });
         });
-    </script>
+        </script>
+
+
 </body>
 </html>
