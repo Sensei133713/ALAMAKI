@@ -569,6 +569,11 @@
         font-size: 0.9rem; /* Slightly smaller font */
     }
     }
+@media (max-width: 767px) {
+    #mobile-menu {
+        top: 80px !important;
+    }
+}
     .header-flex {
         gap: 0.125rem;
     }
@@ -689,11 +694,19 @@
         </p>
 
         <!-- Vaihtolaitteet-linkki -->
-        <div class="mb-6">
+        <div class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-4">
+            <!-- Tori.fi -->
             <a href="https://www.tori.fi/profile/ads?userId=367244660" class="inline-flex items-center text-base md:text-lg text-gray-100 font-medium hover:underline">
                 Meiltä myös vaihtolaitteet
-                <img src="images/tori.png" alt="Vaihtolaitteet" class="w-18 h-12 ml-2 inline-block">
+                <img src="images/tori.png" alt="Tori.fi" class="w-18 h-12 ml-2 inline-block">
             </a>
+
+            <!-- Toinen palvelu, esim. Nettimoto -->
+           <!-- <a href="https://www.nettimoto.com/yritys/pkhalamakioy" target="_blank" class="inline-flex items-center text-base md:text-lg text-gray-100 font-medium hover:underline">
+                Katso myös Nettimotossa
+                <img src="images/nettimoto4.png" alt="Nettimoto.com" class="h-[45px] w-auto ml-2 inline-block">
+
+            </a> -->
         </div>
 
         <!-- Ota yhteyttä -painike omalla rivillään -->
@@ -1320,6 +1333,19 @@
                 menuIcon.classList.add('fa-bars');
                 menuIcon.classList.remove('fa-times');
             });
+        });
+
+        window.addEventListener("load", () => {
+        const header = document.querySelector('header');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function setMobileMenuPosition() {
+            const headerHeight = header.getBoundingClientRect().height;
+            mobileMenu.style.top = `${headerHeight}px`;
+        }
+
+        setMobileMenuPosition();
+        window.addEventListener('resize', setMobileMenuPosition);
         });
         </script>
 
